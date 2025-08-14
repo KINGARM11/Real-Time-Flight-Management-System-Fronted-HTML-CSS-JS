@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Form</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+      margin-top: 20px;
+    }
+
+    .tel {
+      display: flex;
+    }
+
+    .tel>select {
+      border-radius: 0;
+      width: 65px;
+    }
+
+    input {
+      width: 200px;
+      height: 40px;
+      padding-left: 10px;
+    }
+
+    .col1 select,
+    .col2 select,
+    .col3 select {
+      padding: 10px;
+    }
+
+    .col4 {
+      margin-left: 376px;
+      margin-top: 70px;
+      width: 784px;
+    }
+
+    textarea {
+      height: 80px;
+      width: 775px;
+      padding: 3px;
+    }
+
+    p {
+      margin-left: 250px;
+    }
+
+    button {
+      margin-left: 90%;
+      margin-top: 20px;
+      padding: 10px 30px;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff7bff;
+      font-size: 29px;
+    }
+
+    button a {
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      
+    }
+    button:hover{
+      background-color: rgb(60, 248, 255);
+    }
+    button a:hover{
+      font-size: 30px;
+      
+    }
+
+    .drop {
+      height: 300px;
+      width: 500px;
+      border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      border-radius: 10px;
+      position: absolute;
+      top: 629px;
+      left: 628px;
+      background-color: white;
+      visibility: hidden;
+    }
+
+    .drop span,
+    .drop2 span {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .drop span:hover,
+    .drop2 span:hover {
+      background-color: lightgrey;
+      font-weight: bold;
+      color: brown;
+    }
+
+    .desti {
+      cursor: pointer;
+    }
+
+    .icon {
+      position: absolute;
+      top: 640px;
+      left: 1110px;
+      z-index: 1;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .icon:hover {
+      border-radius: 50%;
+      background-color: lightgray;
+    }
+
+    .drop img,
+    .drop2 img {
+      width: 200px;
+    }
+
+    .drop2 {
+      height: 300px;
+      width: 500px;
+      border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      border-radius: 10px;
+      position: absolute;
+      top: 629px;
+      left: 937px;
+      background-color: white;
+      visibility: hidden;
+    }
+
+    .drop span {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .drop span:hover {
+      background-color: lightgrey;
+      font-weight: bold;
+      color: brown;
+    }
+
+    .icon1 {
+      position: absolute;
+      top: 640px;
+      left: 1420px;
+      z-index: 1;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .icon1:hover {
+      border-radius: 50%;
+      background-color: lightgray;
+    }
+
+    .btn {
+      margin-left: 46%;
+      border-radius: 10px;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .btn:hover {
+      background-color: aqua;
+    }
+
+    .feedback-image {
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      margin-left: 10px;
+      text-decoration: underline;
+      margin-top: -52px;
+  font-size: 50px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: brown;
+    }
+
+    input,
+    select,
+    .col4 {
+      border: 2px solid black;
+    }
+
+    footer img {
+      margin-top: 20px;
+      width: 100vw;
+    }
+
+    .phone {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 74%;
+      left: 40.7%;
+      border: 2px solid black;
+      padding: 5px;
+      gap: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      max-height: 200px;
+      overflow-x: hidden;
+      visibility: hidden;
+    }
+
+    .Tel {
+      height: 40px;
+      width: 70px;
+      border: 2px solid black;
+      border-right: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: lightgray;
+    }
+
+    .icon3 {
+      font-size: 15px;
+      text-align: end;
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .icon4 {
+      margin-left: 130px;
+    }
+
+    .down {
+      position: absolute;
+      top: 69%;
+      left: 44%;
+      visibility: hidden;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .phone span:hover {
+      color: brown;
+      font-weight: bold;
+    }
+
+    .val1 {
+      position: absolute;
+      top: 73%;
+      left: 25%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val2 {
+      position: absolute;
+      top: 73%;
+      left: 41.5%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val3 {
+      position: absolute;
+      top: 73%;
+      left: 63%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val4 {
+      position: absolute;
+      top: 89%;
+      left: 41.5%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val5 {
+      position: absolute;
+      top: 89%;
+      left: 63%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val6 {
+      position: absolute;
+      top: 103.8%;
+      left: 25%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .val7 {
+      position: absolute;
+      top: 126.5%;
+      left: 25%;
+      margin-top: 8px;
+      visibility: hidden;
+    }
+
+    .clicked::placeholder {
+      color: red;
+    }
+  </style>
+  <script src="index.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <button><a href="home.html" class="home">Home</a></button>
+  <h1>Feedback Form</h1>
+  <img src="fee.jpeg" alt="Feedback" class="feedback-image" />
+  <div class="container">
+    <p>
+      Dear Dream Flights Customer, please select the most suitable option from
+      the drop-down list.
+    </p>
+    <form>
+      <div class="col1">
+        <input type="text" placeholder="Name*" class="inp5" value="" />
+        <input type="text" placeholder="PNR No" class="inp6" />
+        <select style="border-radius: 0" class="sel1" value="">
+          <option class="sel2" selected>Voice Of Coustomer*</option>
+          <option>FeedBack</option>
+          <option>Appreciation</option>
+          <option>Suggestion</option>
+          <option>Complaint</option>
+          <option>Request</option>
+          <option>Enquiry</option>
+        </select>
+      </div>
+      <div class="col2">
+        <div class="tel">
+          <div class="Tel">
+            <span style="font-size: 18px; font-weight: bold; color: darkgreen" class="Span">+91</span>
+            <ion-icon name="chevron-down-outline" class="icon3"></ion-icon>
+          </div>
+          <input id="phone" type="text" placeholder="Phone*" class="inp7" value="" />
+        </div>
+        <input style="width: 273px" class="origin" placeholder="Origin Airport City" value="" />
+        <select style="border-radius: 0" class="op9" disabled>
+          <option class="sel2" selected>Coustomer Touch Point*</option>
+          <option>Airport Services FAQS</option>
+          <option>Inflight Services FAQS</option>
+          <option>Digital/Website FAQS</option>
+          <option>Flight Schedule FAQS</option>
+        </select>
+      </div>
+      <div class="col3">
+        <input type="text" placeholder="Email*" class="inp8" value="" />
+        <input type="text" placeholder="Destination Airport City" class="desti" value="" />
+        <select style="border-radius: 0" class="op10" disabled>
+          <option class="op1" selected>Reason*</option>
+          <option class="op2">Baggage</option>
+          <option class="op3">Flight Missed</option>
+          <option class="op4">Staff Related</option>
+          <option class="op6">Special Assistance</option>
+        </select>
+      </div>
+    </form>
+    <div class="col4">
+      <textarea placeholder="Description*"></textarea>
+    </div>
+    <ion-icon name="close-outline" class="icon" onclick="Closed()"></ion-icon>
+    <div class="drop">
+      <img src="des.jpeg" />
+      <span>Adolfo Suárez Madrid–Barajas Airport (MAD) - Madrid, Spain</span>
+      <span>Amsterdam Airport Schiphol (AMS) - Amsterdam, Netherlands</span>
+      <span>Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+      <span>Beijing Capital International Airport (PEK) - Beijing, China</span>
+      <span>Changi Airport (SIN) - Singapore</span>
+      <span>Charles de Gaulle Airport (CDG) - Paris, France</span>
+      <span>Chennai International Airport (MAA) - Chennai</span>
+      <span>Chhatrapati Shivaji Maharaj International Airport (BOM) -
+        Mumbai</span>
+      <span>Cochin International Airport (COK) - Kochi</span>
+      <span>Devi Ahilya Bai Holkar Airport (IDR) - Indore</span>
+      <span>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+      <span>Dubai International Airport (DXB) - Dubai, United Arab Emirates</span>
+      <span>Frankfurt Airport (FRA) - Frankfurt, Germany</span>
+      <span>Goa International Airport (GOI) - Goa</span>
+      <span>Hong Kong International Airport (HKG) - Hong Kong</span>
+      <span>Indira Gandhi International Airport (DEL) - New Delhi</span>
+      <span>Jolly Grant Airport (DED) - Dehradun</span>
+      <span>Jaipur International Airport (JAI) - Jaipur</span>
+      <span>Kempegowda International Airport (BLR) - Bengaluru</span>
+      <span>Lal Bahadur Shastri International Airport (VNS) - Varanasi</span>
+      <span>London Heathrow Airport (LHR) - London, United Kingdom</span>
+      <span>Los Angeles International Airport (LAX) - Los Angeles, United
+        States</span>
+      <span>Lokpriya Gopinath Bordoloi International Airport (GAU) -
+        Guwahati</span>
+      <span>Mangaluru International Airport (IXE) - Mangaluru</span>
+      <span>Munich Airport (MUC) - Munich, Germany</span>
+      <span>Narita International Airport (NRT) - Tokyo, Japan</span>
+      <span>Netaji Subhas Chandra Bose International Airport (CCU) -
+        Kolkata</span>
+      <span>O'Hare International Airport (ORD) - Chicago, United States</span>
+      <span>Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+      <span>San Francisco International Airport (SFO) - San Francisco, United
+        States</span>
+      <span>Sardar Vallabhbhai Patel International Airport (AMD) -
+        Ahmedabad</span>
+      <span>Shanghai Pudong International Airport (PVG) - Shanghai, China</span>
+      <span>Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+      <span>Suvarnabhumi Airport (BKK) - Bangkok, Thailand</span>
+      <span>Sydney Kingsford Smith Airport (SYD) - Sydney, Australia</span>
+      <span>Tiruchirappalli International Airport (TRZ) - Tiruchirappalli</span>
+      <span>Toronto Pearson International Airport (YYZ) - Toronto, Canada</span>
+      <span>Vienna International Airport (VIE) - Vienna, Austria</span>
+      <span>Zurich Airport (ZRH) - Zurich, Switzerland</span>
+    </div>
+    <ion-icon name="close-outline" class="icon1" onclick="Closed1()"></ion-icon>
+    <div class="drop2">
+      <img src="des.jpeg" />
+      <span>Adolfo Suárez Madrid–Barajas Airport (MAD) - Madrid, Spain</span>
+      <span>Amsterdam Airport Schiphol (AMS) - Amsterdam, Netherlands</span>
+      <span>Biju Patnaik International Airport (BBI) - Bhubaneswar</span>
+      <span>Beijing Capital International Airport (PEK) - Beijing, China</span>
+      <span>Changi Airport (SIN) - Singapore</span>
+      <span>Charles de Gaulle Airport (CDG) - Paris, France</span>
+      <span>Chennai International Airport (MAA) - Chennai</span>
+      <span>Chhatrapati Shivaji Maharaj International Airport (BOM) -
+        Mumbai</span>
+      <span>Cochin International Airport (COK) - Kochi</span>
+      <span>Devi Ahilya Bai Holkar Airport (IDR) - Indore</span>
+      <span>Dr. Babasaheb Ambedkar International Airport (NAG) - Nagpur</span>
+      <span>Dubai International Airport (DXB) - Dubai, United Arab Emirates</span>
+      <span>Frankfurt Airport (FRA) - Frankfurt, Germany</span>
+      <span>Goa International Airport (GOI) - Goa</span>
+      <span>Hong Kong International Airport (HKG) - Hong Kong</span>
+      <span>Indira Gandhi International Airport (DEL) - New Delhi</span>
+      <span>Jolly Grant Airport (DED) - Dehradun</span>
+      <span>Jaipur International Airport (JAI) - Jaipur</span>
+      <span>Kempegowda International Airport (BLR) - Bengaluru</span>
+      <span>Lal Bahadur Shastri International Airport (VNS) - Varanasi</span>
+      <span>London Heathrow Airport (LHR) - London, United Kingdom</span>
+      <span>Los Angeles International Airport (LAX) - Los Angeles, United
+        States</span>
+      <span>Lokpriya Gopinath Bordoloi International Airport (GAU) -
+        Guwahati</span>
+      <span>Mangaluru International Airport (IXE) - Mangaluru</span>
+      <span>Munich Airport (MUC) - Munich, Germany</span>
+      <span>Narita International Airport (NRT) - Tokyo, Japan</span>
+      <span>Netaji Subhas Chandra Bose International Airport (CCU) -
+        Kolkata</span>
+      <span>O'Hare International Airport (ORD) - Chicago, United States</span>
+      <span>Rajiv Gandhi International Airport (HYD) - Hyderabad</span>
+      <span>San Francisco International Airport (SFO) - San Francisco, United
+        States</span>
+      <span>Sardar Vallabhbhai Patel International Airport (AMD) -
+        Ahmedabad</span>
+      <span>Shanghai Pudong International Airport (PVG) - Shanghai, China</span>
+      <span>Sri Guru Ram Dass Jee International Airport (ATQ) - Amritsar</span>
+      <span>Suvarnabhumi Airport (BKK) - Bangkok, Thailand</span>
+      <span>Sydney Kingsford Smith Airport (SYD) - Sydney, Australia</span>
+      <span>Tiruchirappalli International Airport (TRZ) - Tiruchirappalli</span>
+      <span>Toronto Pearson International Airport (YYZ) - Toronto, Canada</span>
+      <span>Vienna International Airport (VIE) - Vienna, Austria</span>
+      <span>Zurich Airport (ZRH) - Zurich, Switzerland</span>
+    </div>
+    <button class="btn">Submit</button>
+  </div>
+  <div class="phone">
+    <span>India (+91)</span>
+    <span>United States (+1)</span>
+    <span>United Kingdom (+44)</span>
+    <span>Germany (+49)</span>
+    <span>China (+86)</span>
+    <!-- Added 20 more countries below -->
+    <span>Australia (+61)</span>
+    <span>Brazil (+55)</span>
+    <span>Canada (+1)</span>
+    <span>France (+33)</span>
+    <span>Italy (+39)</span>
+    <span>Japan (+81)</span>
+    <span>Mexico (+52)</span>
+    <span>Netherlands (+31)</span>
+    <span>Russia (+7)</span>
+    <span>Saudi Arabia (+966)</span>
+    <span>South Korea (+82)</span>
+    <span>Spain (+34)</span>
+    <span>Sweden (+46)</span>
+    <span>Switzerland (+41)</span>
+    <span>Turkey (+90)</span>
+    <!-- Adding 20 more countries -->
+    <span>Argentina (+54)</span>
+    <span>Austria (+43)</span>
+    <span>Belgium (+32)</span>
+    <span>Chile (+56)</span>
+    <span>Colombia (+57)</span>
+    <span>Czech Republic (+420)</span>
+    <span>Denmark (+45)</span>
+    <span>Egypt (+20)</span>
+    <span>Greece (+30)</span>
+    <span>Hong Kong (+852)</span>
+    <span>Hungary (+36)</span>
+    <span>India (+91)</span>
+    <span>Indonesia (+62)</span>
+    <span>Ireland (+353)</span>
+    <span>Israel (+972)</span>
+    <span>Malaysia (+60)</span>
+    <span>New Zealand (+64)</span>
+    <span>Norway (+47)</span>
+    <span>Poland (+48)</span>
+    <span>Portugal (+351)</span>
+  </div>
+  <ion-icon name="chevron-up-outline" class="down"></ion-icon>
+  <div class="val1">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val2">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val3">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val4">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val5">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val6">
+    <span>*Value is Required</span>
+  </div>
+  <div class="val7">
+    <span>*Value is Required</span>
+  </div>
+  <footer>
+    <img src="foot.png" />
+  </footer>
+  <script>
+    let a = document.querySelectorAll(".col1 option");
+    let b = document.querySelector(".op9");
+    let c = document.querySelector(".op10");
+    let d = document.querySelectorAll(".op9 option");
+    let B = document.querySelector(".op2");
+    let C = document.querySelector(".op3");
+    let D = document.querySelector(".op4");
+    let F = document.querySelector(".op6");
+    let O = document.querySelector(".origin");
+    let but = document.querySelector(".btn");
+    let dest = document.querySelector(".desti");
+    let inp = document.querySelectorAll("input");
+    let inp5 = document.querySelector(".inp5");
+    let inp6 = document.querySelector(".inp6");
+    let inp7 = document.querySelector(".inp7");
+    let inp8 = document.querySelector(".inp8");
+    let bod = document.querySelector("body");
+    let text = document.querySelector("textarea");
+    let sel1 = document.querySelector(".sel1");
+    let sel2 = document.querySelector(".sel2");
+    let op1 = document.querySelector(".op1");
+    inp5.value = "";
+    inp6.value = "";
+    inp6.value = "";
+    inp7.value = "";
+    inp8.value = "";
+    dest.value = "";
+    O.value = "";
+    text.value = "";
+    window.addEventListener("DOMContentLoaded", function () {
+      let Def = "Voice Of Coustomer*";
+      sel1.value = Def;
+      b.value = "Coustomer Touch Point*";
+      c.value = "Reason*";
+      b.disabled = true;
+      c.disabled = true;
+    });
+    but.addEventListener("click", function () {
+      if (
+        inp5.value === "" ||
+        inp6.value === "" ||
+        inp7.value === "" ||
+        inp8.value === "" ||
+        dest.value === "" ||
+        dest.value === ""
+      ) {
+        alert("Please Fields Should Not Empty!");
+      } else {
+        window.location.href = "gifff.html";
+      }
+    });
+    for (let i = 0; i < a.length; i++) {
+      let p = a[i];
+      p.addEventListener("click", function () {
+        let q = a[i].innerHTML;
+        if (q === "Voice Of Coustomer*") {
+          b.style.visibility = "visible";
+          b.disabled = true;
+          c.style.visibility = "visible";
+          c.disabled = true;
+        } else if (q === "FeedBack") {
+          b.style.visibility = "hidden";
+          c.style.visibility = "hidden";
+        } else if (q === "Appreciation") {
+          b.style.visibility = "hidden";
+          c.style.visibility = "hidden";
+        } else if (q === "Suggestion") {
+          b.disabled = false;
+          c.style.visibility = "visible";
+          b.style.visibility = "visible";
+          c.disabled = false;
+        } else if (q === "Complaint" || q === "Request" || q === "Enquiry") {
+          b.disabled = false;
+          c.style.visibility = "visible";
+          b.style.visibility = "visible";
+          c.disabled = true;
+        }
+      });
+    }
+    for (let i = 1; i < d.length; i++) {
+      let f = d[i];
+      f.addEventListener("click", function () {
+        let g = f.innerHTML;
+        if (g === "Airport Services FAQS") {
+          window.open("airlines.html");
+        } else if (g === "Inflight Services FAQS") {
+          B.innerHTML = "Meal Services";
+          C.innerHTML = "On Board Merchadise";
+          D.innerHTML = "Staff Related";
+          window.open("Inflight.html");
+        } else if (g === "Digital/Website FAQS") {
+          B.innerHTML = "New Booking Related";
+          C.innerHTML = "Fares Related";
+          D.innerHTML = "Website Content";
+          F.innerHTML = "Offers & Promos";
+          window.open("Digital.html");
+        } else if (g === "Flight Schedule FAQS") {
+          B.innerHTML = "Flight Cancelled";
+          C.innerHTML = "Flight Delayed";
+          D.innerHTML = "Flight Diverted";
+          F.innerHTML = "New Destinations";
+          window.open("FlightDel.html");
+        }
+      });
+    }
+    let drop = document.querySelector(".drop");
+    let close = document.querySelector(".icon");
+    let Drop = document.querySelectorAll(".drop span");
+    O.value = "";
+    O.addEventListener("click", function () {
+      drop.style.visibility = "visible";
+      close.style.visibility = "visible";
+      Drop.forEach((e) => {
+        e.addEventListener("click", function () {
+          O.value = e.innerHTML;
+          drop.style.visibility = "hidden";
+          close.style.visibility = "hidden";
+        });
+      });
+    });
+    close.style.visibility = "hidden";
+    function Closed() {
+      drop.style.visibility = "hidden";
+      close.style.visibility = "visible";
+      close.style.visibility = "hidden";
+    }
+    let drop1 = document.querySelector(".drop2");
+    let close1 = document.querySelector(".icon1");
+    let Drop1 = document.querySelectorAll(".drop2 span");
+    dest.value = "";
+    dest.addEventListener("click", function () {
+      if (O.value === "") {
+        alert("Please Select Origin Airport City");
+      } else {
+        drop1.style.visibility = "visible";
+        close1.style.visibility = "visible";
+        Drop1.forEach((e) => {
+          e.addEventListener("click", function () {
+            dest.value = e.innerHTML;
+            drop1.style.visibility = "hidden";
+            close1.style.visibility = "hidden";
+          });
+        });
+      }
+    });
+
+    close1.style.visibility = "hidden";
+    function Closed1() {
+      drop1.style.visibility = "hidden";
+      close1.style.visibility = "visible";
+      close1.style.visibility = "hidden";
+    }
+
+    let butt = document.querySelector(".icon3");
+    let pho = document.querySelector(".phone");
+    let butt1 = document.querySelector(".icon4");
+    let span1 = document.querySelectorAll(".phone span");
+    let up1 = document.querySelector(".down");
+    let up2 = document.querySelector(".Tel");
+    butt.addEventListener("click", function () {
+      pho.style.visibility = "visible";
+      butt.style.visibility = "hidden";
+      up1.style.visibility = "visible";
+    });
+    up1.addEventListener("click", function () {
+      pho.style.visibility = "hidden";
+      up1.style.visibility = "hidden";
+      butt.style.visibility = "visible";
+    });
+    let butt2 = document.querySelector(".Span");
+    span1.forEach((e) => {
+      let content = e.innerHTML;
+      e.addEventListener("click", function () {
+        if (content.includes("India (+91)")) {
+          butt2.innerHTML = "+91";
+        } else if (content.includes("United States (+1)")) {
+          butt2.innerHTML = "+1";
+        } else if (content.includes("United Kingdom (+44)")) {
+          butt2.innerHTML = "+44";
+        } else if (content.includes("Germany (+49)")) {
+          butt2.innerHTML = "+49";
+        } else if (content.includes("China (+86)")) {
+          butt2.innerHTML = "+86";
+        } else if (content.includes("Australia (+61)")) {
+          butt2.innerHTML = "+61";
+        } else if (content.includes("Brazil (+55)")) {
+          butt2.innerHTML = "+55";
+        } else if (content.includes("Canada (+1)")) {
+          butt2.innerHTML = "+1";
+        } else if (content.includes("France (+33)")) {
+          butt2.innerHTML = "+33";
+        } else if (content.includes("Italy (+39)")) {
+          butt2.innerHTML = "+39";
+        } else if (content.includes("Japan (+81)")) {
+          butt2.innerHTML = "+81";
+        } else if (content.includes("Mexico (+52)")) {
+          butt2.innerHTML = "+52";
+        } else if (content.includes("Netherlands (+31)")) {
+          butt2.innerHTML = "+31";
+        } else if (content.includes("Russia (+7)")) {
+          butt2.innerHTML = "+7";
+        } else if (content.includes("Saudi Arabia (+966)")) {
+          butt2.innerHTML = "+966";
+        } else if (content.includes("South Korea (+82)")) {
+          butt2.innerHTML = "+82";
+        } else if (content.includes("Spain (+34)")) {
+          butt2.innerHTML = "+34";
+        } else if (content.includes("Sweden (+46)")) {
+          butt2.innerHTML = "+46";
+        } else if (content.includes("Switzerland (+41)")) {
+          butt2.innerHTML = "+41";
+        } else if (content.includes("Turkey (+90)")) {
+          butt2.innerHTML = "+90";
+        } else if (content.includes("Argentina (+54)")) {
+          butt2.innerHTML = "+54";
+        } else if (content.includes("Austria (+43)")) {
+          butt2.innerHTML = "+43";
+        } else if (content.includes("Belgium (+32)")) {
+          butt2.innerHTML = "+32";
+        } else if (content.includes("Chile (+56)")) {
+          butt2.innerHTML = "+56";
+        } else if (content.includes("Colombia (+57)")) {
+          butt2.innerHTML = "+57";
+        } else if (content.includes("Czech Republic (+420)")) {
+          butt2.innerHTML = "+420";
+        } else if (content.includes("Denmark (+45)")) {
+          butt2.innerHTML = "+45";
+        } else if (content.includes("Egypt (+20)")) {
+          butt2.innerHTML = "+20";
+        } else if (content.includes("Greece (+30)")) {
+          butt2.innerHTML = "+30";
+        } else if (content.includes("Hong Kong (+852)")) {
+          butt2.innerHTML = "+852";
+        } else if (content.includes("Hungary (+36)")) {
+          butt2.innerHTML = "+36";
+        } else if (content.includes("Indonesia (+62)")) {
+          butt2.innerHTML = "+62";
+        } else if (content.includes("Ireland (+353)")) {
+          butt2.innerHTML = "+353";
+        } else if (content.includes("Israel (+972)")) {
+          butt2.innerHTML = "+972";
+        } else if (content.includes("Malaysia (+60)")) {
+          butt2.innerHTML = "+60";
+        } else if (content.includes("New Zealand (+64)")) {
+          butt2.innerHTML = "+64";
+        } else if (content.includes("Norway (+47)")) {
+          butt2.innerHTML = "+47";
+        } else if (content.includes("Poland (+48)")) {
+          butt2.innerHTML = "+48";
+        } else if (content.includes("Portugal (+351)")) {
+          butt2.innerHTML = "+351";
+        }
+        pho.style.visibility = "hidden";
+        butt.style.visibility = "visible";
+        up1.style.visibility = "hidden";
+      });
+
+      // Add more conditions for other countries as needed
+    });
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

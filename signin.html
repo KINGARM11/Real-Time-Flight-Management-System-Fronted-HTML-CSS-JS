@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: magenta;
+            color: black;
+            font-size: 85px;
+            margin-left: -8px;
+            margin-top: -8px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 1540px;
+            text-decoration: underline;
+        }
+
+        label {
+            font-size: 35px;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        input {
+            font-size: 35px;
+            border: 3px solid black;
+        }
+        .btn{
+            border: 3px solid rgb(0, 0, 0);
+            background-color: aqua;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        #change{
+            border: 3px solid rgb(0, 0, 0);
+            background-color: aqua;
+            font-size: 30px;
+            font-weight: bolder;
+            margin-left: 450px;
+            height: 70px;
+        }
+        #change:hover{
+            background-color: palegreen;
+            font-size: 31px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Set Credentials</h1>
+    <label for="">Enter Your Name : </label>
+    <input type="text" name="Name"><br><br>
+    <label for="">Enter Your Mobile Number : </label>
+    <input type="text" name="Mob"><br><br>
+    <label for="current_username">Enter Current Username : </label>
+    <input type="text" id="current_username"><br><br><br><br>
+    <label for="new_username">Enter New Username : </label>
+    <input type="text" id="new_username"><br><br><br><br>
+    <label for="current_password">Enter Current Password : </label>
+    <input type="password" id="current_password"><br><br><br><br>
+    <label for="new_password">Enter New Password : </label>
+    <input type="password" id="new_password"><br><br>
+    <button onclick="changeCredentials()" id="change">Change Credentials</button>
+    
+
+ 
+    
+
+    <script>
+        function changeCredentials() {
+            let currentUsername = document.getElementById("current_username").value;
+            let newUsername = document.getElementById("new_username").value;
+            let currentPassword = document.getElementById("current_password").value;
+            let newPassword = document.getElementById("new_password").value;
+    
+            let storedUsername = localStorage.getItem("username");
+            let storedPassword = localStorage.getItem("password");
+           
+
+    
+            console.log("Stored Username:", storedUsername);
+            console.log("Stored Password:", storedPassword);
+    
+            if ((storedUsername && storedPassword) && currentUsername === storedUsername && currentPassword === storedPassword) {
+                if (newUsername !== currentUsername || newPassword !== currentPassword) {
+                     localStorage.setItem("username", newUsername);
+                     localStorage.setItem("password", newPassword);
+            
+                    alert("Credentials updated successfully!");
+                } else {
+                    alert("New credentials are the same as the Current Credentials. No changes made.");
+                }
+    
+                document.getElementById("current_username").value = "";
+                document.getElementById("new_username").value = "";
+                document.getElementById("current_password").value = "";
+                document.getElementById("new_password").value = "";
+            } else {
+                alert("Incorrect Current Username or Password.");
+            }
+        }
+    </script>
+    
+    
+</body>
+
+</html>

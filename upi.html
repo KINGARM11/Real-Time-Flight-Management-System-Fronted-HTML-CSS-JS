@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: #004fdd;
+            color: white;
+            margin-left: -8px;
+            margin-top: -8px;
+            font-size: 35px;
+            height: 100px;
+            display: flex;
+            width: 1540px;
+            align-items: center;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            animation: ani 15s linear infinite;
+        }
+        @keyframes ani{
+            0%{
+                transform: translateX(-1100px);
+            }
+            100%{
+                transform: translateX(1500px);
+            }
+        }
+        #lists{
+            font-size: 35px;
+            line-height: 60px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            margin-left: 8px;
+            
+        }
+        li a{
+            text-decoration: none;
+            color: rgb(191, 14, 58);
+        }
+        li a:hover{
+            color: red;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Pay Through UPI</h1>
+    </div>
+    <ol type="1" id="lists">
+        <li><a href="qrcode.html">Google Pay</a></li>
+        <li><a href="qrcode.html">Phone Pay</a></li>
+        <li><a href="qrcode.html">PayTm</a></li>
+        <li><a href="qrcode.html">Scan QR Code</a></li>
+        <li><a href="qrcode.html">Bhim UPI</a></li>
+        <li><a href="qrcode.html">Amazon Pay</a></li>
+        <li><a href="qrcode.html">Yono SBI</a></li>
+        <li><a href="qrcode.html">Express Payment</a></li>
+        <li><a href="qrcode.html">Bharat Pay</a></li>
+        <li><a href="qrcode.html">MobiKwik</a></li>
+    </ol>
+
+</body>
+</html>

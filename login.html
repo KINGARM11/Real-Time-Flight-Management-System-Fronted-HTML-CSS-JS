@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(187, 234, 186);
+        }
+
+        .form-input {
+            margin-top: 10px;
+            width: 200px;
+            height: 105px;
+            margin-left: 90px;
+        }
+
+        input {
+            width: 500px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid black;
+            font-size: 30px;
+        }
+
+        .captcha-refresh {
+            font-size: 41px;
+            font-weight: 30px;
+            margin-top: 10px;
+            position: absolute;
+            margin-left: 0px;
+            border: 2px solid black;
+        }
+
+        #login {
+            width: 300px;
+            height: 55px;
+            font-size: 25px;
+            font-weight: bolder;
+            margin-left: 100px;
+            background-color: #7575f7
+        }
+
+        label {
+            font-size: 25px;
+            color: rgb(0, 0, 0);
+            font-weight: bolder;
+        }
+
+        ::placeholder {
+            font-size: 25px;
+
+        }
+
+        .login-form {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            box-shadow: 0px 5px 10px rgb(255, 252, 252);
+            background: #fbc2c2;
+            width: 90%;
+            max-width: 750px;
+            height: 570px;
+            border-radius: 25px;
+            margin-left: 312px;
+        }
+
+        .captcha {
+            margin-left: 90px;
+        }
+
+        #login:hover {
+            background-color: rgb(152, 150, 221);
+            text-transform: uppercase;
+        }
+
+        .captcha-refresh:hover {
+            background-color: rgb(169, 160, 160);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            text-decoration: underline;
+        }
+
+        #captcha-form {
+            width: 445px;
+            margin-top: 10px;
+            border-radius: 0px;
+
+        }
+
+        .preview {
+            height: 60px;
+            line-height: 40px;
+            letter-spacing: 8px;
+            border: 2px solid black;
+            width: 500px;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 30px;
+            
+            /*    user can't be select the text */
+            user-select: none; 
+        }
+
+        .header {
+            font-size: 50px;
+            border: 2px solid black;
+            margin: -8px;
+            width: 1532px;
+            background-color: #f39aff;
+            font-family: rockwell;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding-left: 362px;
+            text-align: center;
+            margin-left: -120px;
+        }
+
+        .photo img {
+
+            width: 505px;
+            height: 1000px;
+            margin-left: -3px;
+            margin-top: 8px;
+        }
+
+        .cloud img {
+            width: 101%;
+            margin-left: -8px;
+            margin-top: -2px;
+        }
+
+        .imgs img {
+            position: relative;
+            margin-top: -4px;
+            height: 350px;
+        }
+
+        .imgss img {
+            position: absolute;
+            margin-top: -354px;
+            height: 350px;
+            margin-left: 438px;
+        }
+
+        .imgsss img {
+            position: absolute;
+            margin-top: -354px;
+            height: 350px;
+            margin-left: 1060px;
+            width: 549px;
+        }
+
+        .imgssss img {
+            position: absolute;
+            margin-top: -1715px;
+            height: 361px;
+            margin-left: 0px;
+            width: 520px;
+        }
+
+        .imgsssss img {
+            position: absolute;
+            margin-top: -1715px;
+            height: 361px;
+            margin-left: 520px;
+            width: 549px;
+        }
+
+        .imgssssss img {
+            position: absolute;
+            margin-top: -1715px;
+            height: 361px;
+            margin-left: 1036px;
+            width: 549px;
+        }
+
+        .imgsssssss img {
+            position: absolute;
+            width: 549px;
+            margin-top: -2390px;
+            height: 361px;
+            margin-left: 0px;
+        }
+
+        .imgssssssss img {
+            position: absolute;
+            width: 549px;
+            margin-top: -2028px;
+            height: 312px;
+            margin-left: 0px;
+        }
+
+        .custom-swal .swal-title {
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: arial;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Welcome to Dream Flight Booking Website</div>
+    <div class="cloud">
+        <img src="cloud.jpg" alt="error">
+
+        <div class="photo">
+
+            <img src="aero.png" alt="">
+        </div>
+
+        <div class="login-form">
+            <h1>LOGIN/<a href="signin.html">SIGNIN</a></h1>
+
+            <div class="form-input">
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+
+            </div>
+            <div class="form-input">
+                <label for="password">Password:</label>
+                <input type="password" id="password" autocomplete="off">
+            </div>
+            <div class="captcha">
+                <label for="captcha-input">Enter Captcha:</label>
+                <div class="preview"></div>
+                <div class="captcha-form">
+                    <input type="text" id="captcha-form" placeholder="Enter the Text">
+                    <button class="captcha-refresh">
+                        <i class="fa fa-refresh"><ion-icon name="refresh-outline"></ion-icon></i>
+                    </button>
+                </div>
+            </div>
+            <div class="form-input">
+                <button id="login" type="button">Login</button>
+            </div>
+        </div>
+    </div>
+    <div class="imgs">
+        <img src="1.png" alt="" id="imgs">
+    </div>
+    <div class="imgss">
+        <img src="2.png" alt="">
+    </div>
+    <div class="imgsss">
+        <img src="3.png" alt="">
+    </div>
+    <div class="imgssss">
+        <img src="4.png" alt="">
+    </div>
+    <div class="imgsssss">
+        <img src="5.png" alt="">
+    </div>
+    <div class="imgssssss">
+        <img src="6.jpg" alt="">
+    </div>
+    <div class="imgsssssss">
+        <img src="7.jpg" alt="">
+    </div>
+    <div class="imgssssssss">
+        <img src="8.png" alt="">
+    </div>
+    <script>
+        (function () {
+            const fonts = ["arial", "sans-serif"];
+            let captchaValue = "";
+
+            function generateCaptcha() {
+                let value = btoa(Math.random() * 100);
+                value = value.substr(0, 4 + Math.random() * 3);
+                captchaValue = value;
+            }
+
+            function setCaptcha() {
+                let html = captchaValue
+                    .split("")
+                    .map((char) => {
+                        const rotate = Math.trunc(Math.random() * 30);
+                        const font = Math.trunc(Math.random() * fonts.length);
+                        return `<span style="transform: rotate(${rotate}deg); font-family:${fonts[font]}">${char}</span>`;
+                    })
+                    .join("");
+                document.querySelector(".login-form .captcha .preview").innerHTML = html;
+            }
+
+            function initCaptcha() {
+                document.querySelector(".login-form .captcha-form .captcha-refresh").addEventListener("click", function () {
+                    generateCaptcha();
+                    setCaptcha();
+                });
+                generateCaptcha();
+                setCaptcha();
+            }
+
+            initCaptcha();
+
+            document.querySelector(".login-form #login").addEventListener("click", function () {
+        let inputCaptchaValue = document.querySelector(".login-form .captcha-form input").value;
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+       let storedUsername = localStorage.getItem("username");
+        let updatedPassword = localStorage.getItem("password");
+    
+        localStorage.setItem("username", username);
+     localStorage.setItem("password", password);
+
+        if (inputCaptchaValue !== captchaValue) {
+            swal({
+                title: "Invalid Captcha",
+                icon: "error",
+                className: "custom-swal"
+            });
+            document.getElementById("password").value = "";
+            document.getElementById("captcha-form").value = "";
+        } else if (username === storedUsername && password === updatedPassword) {
+            swal({
+                title: "Logging In!",
+                icon: "success",
+                className: "custom-swal"
+            });
+
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("captcha-form").value = "";
+
+            setTimeout(function () {
+                window.location.assign("home.html");
+            }, 2000);
+        } else {
+            swal({
+                title: "Invalid login!",
+                icon: "error",
+                className: "custom-swal"
+            });
+        }
+
+                if (username != storedUsername) {
+                    swal({
+                        title: "Username is Incorrect",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                    document.getElementById("username").value = "";
+                    document.getElementById("password").value = "";
+                    document.getElementById("captcha-form").value = "";
+                }
+
+                if (password != updatedPassword) {
+                    swal({
+                        title: "Password is incorrect",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                    document.getElementById("captcha-form").value = "";
+                }
+
+                if ((username != storedUsername && password != updatedPassword && inputCaptchaValue != captchaValue)) {
+                    swal({
+                        title: "Invalid Credentials",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                }
+
+                if (username === storedUsername && password === updatedPassword && inputCaptchaValue != captchaValue) {
+                    swal({
+                        title: "Invalid Captcha",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                    document.getElementById("password").value = "";
+                    document.getElementById("captcha-form").value = "";
+                }
+
+                if ((username == "" && password == "" && inputCaptchaValue == "") || (username == "" && password == "" && inputCaptchaValue != "")) {
+                    swal({
+                        title: "Please Enter the Login Credentials !!",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                }
+
+                if ((username != "" && password == "" && inputCaptchaValue == "") || (username != "" && password == "" && inputCaptchaValue != "")) {
+                    swal({
+                        title: "Enter Password !",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                }
+
+                if ((username == "" && password != "" && inputCaptchaValue == "") || (username == "" && password != "" && inputCaptchaValue != "")) {
+                    swal({
+                        title: "Enter Username !",
+                        icon: "error",
+                        className: "custom-swal"
+                    })
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

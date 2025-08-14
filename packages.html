@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ff0081;
+        }
+
+        h1 {
+            border: 3px solid black;
+            display: flex;
+            align-items: center;
+            font-size: 60px;
+            margin-left: -8px;
+            width: 1531px;
+            padding-left: 372px;
+            margin-top: -8px;
+            background-color: bisque;
+            color: #001cb3;
+            font-weight: bolder;
+
+        }
+
+        label {
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+            color:#000000;
+
+        }
+
+        button {
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+            background-color: #6fec6f;
+            
+        }
+        /* .form:hover{
+            background-color: #93d393;
+        } */
+        #inter{
+            width: 280px;
+            height: 72px;
+            border: 7px solid black;
+            border-radius: 10px;
+        }
+        #nation {
+            margin-left: 106px;
+            width: 280px;
+            height: 72px;
+            border: 7px solid black;
+            border-radius: 10px;
+        }
+        #city{
+            margin-left: 166px;
+            width: 280px;
+            height: 72px;
+            border: 7px solid black;
+            border-radius: 10px;
+        }
+        #state{
+            margin-left: 176px;
+            width: 280px;
+            height: 72px;
+            border: 7px solid black;
+            border-radius: 10px;
+        }
+        #local{
+            margin-left: 174px;
+            width: 280px;
+            height: 72px;
+            border: 7px solid black;
+            border-radius: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+            background:#a0e9a0 ;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <h1>FLIGHT TOUR PACKAGES</h1>
+        <div class="form">
+            <label for="">1.INTERNATIONAL PACKAGES : </label>
+        <button id="inter" onclick="inter()">International</button><br><br>
+        <label for="">2.NATIONAL PACKAGES : </label>
+        <button id="nation" onclick="national()">National</button><br><br>
+        <label for="">3.CITIES PACKAGES : </label>
+        <button id="city" onclick="city()">City</button><br><br>
+        <label for="">4.STATE PACKAGES : </label>
+        <button id="state" onclick="state()">State</button><br><br>
+        <label for="">5.LOCAL PACKAGES : </label>
+        <button id="local" onclick="local()">Local</button>
+        </div>
+    </div>
+</body>
+<script>
+    function inter(){
+        window.location.assign('internationPackages.html');
+    }
+    function national(){
+        window.location.assign('nationalPackages.html')
+    }
+    function city(){
+        window.location.assign('cityPackages.html')
+    }
+    function state(){
+        window.location.assign('statePackages.html')
+    }
+    function local(){
+        window.location.assign('localPackages.html')
+    }
+</script>
+</html>

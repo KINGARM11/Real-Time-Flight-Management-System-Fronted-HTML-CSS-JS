@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <style>
+        body{
+            background-color: #ecf0bd;
+        }
+        marquee {
+            background-color: #0eb9ff;
+            color: black;
+            width: 1540px;
+            height: 100px;
+            margin-left: -8px;
+            margin-top: -8px;
+        }
+
+        .text {
+            font-size: 70px;
+            margin-top: -17px;
+            font-family: cambria;
+        }
+
+        label,
+        input {
+            font-size: 35px;
+            font-weight: bolder;
+            margin-top: 55px;
+            font-family: arial;
+        }
+
+        input {
+            border: 3px solid black;
+        }
+
+        #But,
+        #but1 {
+            font-size: 35px;
+            width: 200px;
+            height: 80px;
+            background-color: blue;
+            color: white;
+            font-weight: bolder;
+            border-radius: 27px;
+        }
+
+        #But {
+            margin-top: -81px;
+            /* margin-left: -898px; */
+            position: absolute;
+        }
+
+        #but1 {
+            margin-top: 65px;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .vis,
+        .vis1 {
+            visibility: hidden;
+        }
+        #But:hover{
+            background-color: #0effc3;
+            border: 4px solid black;
+            color: black;
+            cursor: pointer;
+        }
+        #but1:hover{
+            background-color: #0effc3;
+            border: 4px solid black;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <marquee behavior="" direction="left">
+        <h1>
+            <div class="text">PAY WITH WALLET</div>
+        </h1>
+    </marquee>
+    <form action="">
+        <label for="">Enter Your Name : </label>
+        <input type="text" id="name"><br><br>
+        <label for="">Enter Your Mobile Number : </label>
+        <input type="tel" id="num"><br><br>
+        <label for="" class="vis">Enter The OTP : </label>
+        <input type="tel" class="vis1"><br><br>
+        <button id="But" onclick="aayush()">Submit</button>
+        <button id="but1" onclick="VerifyOTP()">Verify</button>
+    </form>
+
+    <script>
+        let Sub = document.getElementById("But");
+        let veri = document.getElementById("but1");
+        let entereo = document.querySelector(".vis");
+        let entereo1 = document.querySelector(".vis1");
+        function aayush() {
+            event.preventDefault();
+            let randomnum = Math.floor(Math.random() * 9000) + 1000;  
+            let rand = Math.ceil(randomnum);
+            let name = document.getElementById("name").value;
+            let number = document.getElementById("num").value;
+            if (number == "" && name == "") {
+                alert("Fields are empty !!");
+            } else if (number == "") {
+                alert("Phone Number is required for OTP Verification");
+            } else if (name == "") {
+                alert("Enter the Name : ");
+            } else if (!Mobnum(number)) {
+                alert("Enter 10 Digit Mobile Number");
+            } else if (!Name(name)) {
+                alert("Enter your Name , First letter should be UpperCase");
+            } else {
+                alert("OTP has been sent to your Mobile Number " + number);
+                var confirmation = confirm("Would you like to see your OTP now?");
+                if (confirmation) {
+                    alert("Your OTP for Verification is " + rand);
+                    Sub.style.visibility = "hidden";
+                    veri.style.visibility = "visible";
+                    entereo.style.visibility = "visible";
+                    entereo1.style.visibility = "visible";
+                    
+                    window.rand = rand; // I m  Storing the randomly generated OTP in a global variable for later comparison
+                } 
+            }
+
+        }
+
+        function VerifyOTP() {
+            let enteredOTP = document.querySelector(".vis1").value;
+            let rand=window.rand;
+            if (enteredOTP ==rand) {
+                alert("Your Transaction Have Been Completed Successfully !!");
+                
+            } else {
+                alert("You Have Entered Wrong OTP");
+            }
+        }
+
+        function Mobnum(num) {
+            let numb = /^\d{10}$/;
+            return numb.test(num);
+        }
+
+        function Name(name) {
+            let username = /^[A-Z][a-z]+$/;
+            return username.test(name);
+        }
+    </script>
+</body>
+
+</html>

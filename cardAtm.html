@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        body {
+            background-color: #ecc6ab;
+        }
+
+        h1 {
+            background-color: chartreuse;
+            color: black;
+            font-size: 50px;
+            width: 1540px;
+            height: 110px;
+            margin-top: -8px;
+            margin-left: -8px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .txt {
+            margin-left: 300px;
+            text-decoration: underline;
+        }
+
+
+        label,
+        input {
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        input {
+            border: 3px solid black;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            font-size: 37px;
+            border-radius: 52px;
+            width: 192px;
+            height: 87px;
+            font-weight: bolder;
+        }
+
+        button:hover {
+            background-color: aqua;
+            color: black;
+            border: 5px solid rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <div class="txt">Provide Your Credit/Debit Card Details</div>
+    </h1>
+    <div class="form">
+        <label>Card Number : </label>
+        <input type="tel" id="num"><br><br><br><br><br>
+        <label>MM/YY : </label>
+        <input type="tel" id="my"><br><br><br><br><br>
+        <label>CVV Number : </label>
+        <input type="tel" id="cvv"><br><br><br><br><br>
+        <label>Name on Card : </label>
+        <input type="text" id="name"><br><br><br>
+    </div>
+    <button id="pay" onclick="proceed()">Pay Now</button>
+
+    <script>
+        function proceed() {
+            let num = document.getElementById("num").value;
+            let month = document.getElementById("my").value;
+            let cvv = document.getElementById("cvv").value;
+            let name = document.getElementById("name").value;
+
+            if (num == "" || month == "" || cvv == "" || name == "") {
+                alert("Please Enter All the fields, then Proceed!!");
+            }
+            else if (!numValid(num)) {
+                alert("Please Enter 16 digits Card Number & Only Digits Allowed");
+            }
+            else if (!months(month)) {
+                alert("Please Enter Month & Year in format MM/YY  & Only Digits Allowed");
+            }
+            else if (!cvvs(cvv)) {
+                alert("Please Enter 3 digit CVV Number  & Only Digits Allowed");
+            }
+            else if (!NameOwner(name)) {
+                alert("Please Enter Card Holder Name, First Letter must be Uppercase & Only Alphabets Allowed");
+            }
+            else {
+                Swal.fire({
+                    title: '',
+                    html: '<span style="font-size: 30px; font-family: Arial;"><b>Your Transaction Has Been Completed Successfully.</b></span>',
+                    icon: 'success',
+                    confirmButtonText: '</b><span style="font-size: 30px; font-family: Arial; font-weight:bolder;">OK</b></span>',
+                    iconColor: 'blue',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.assign("AddPassengerform.html");
+                    }
+                });
+
+            }
+
+        }
+        function numValid(number) {
+            let numbers = /^\d{16}$/;
+            return numbers.test(number);
+        }
+
+        function months(mon) {
+            let monthY = /^(0[1-9]|1[0-2])\/[0-9]{2}$/;
+            return monthY.test(mon);
+        }
+        function cvvs(num) {
+            let numbercvv = /^\d{3}$/;
+            return numbercvv.test(num);
+        }
+        function NameOwner(name) {
+            let Name = /^[A-Z][a-z]+/;
+            return Name.test(name);
+        }
+    </script>
+</body>
+
+</html>

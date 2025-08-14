@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Book Domestic &amp; International Flights at Lowest Airfare - Dream
+    Flights
+  </title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      visibility: hidden;
+    }
+
+    .img {
+      background: url("flight.jpg") no-repeat;
+      background-attachment: initial;
+      background-position: center;
+      background-size: cover;
+      height: 97.5vh;
+      width: 100%;
+      position: relative;
+      visibility: hidden;
+    }
+
+    nav {
+      position: absolute;
+      top: 37px;
+      left: 10px;
+      font-size: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 40px;
+    }
+
+    nav>p {
+      font-family: cursive;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: darkgreen;
+    }
+
+    .img2 {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    ul {
+      display: flex;
+      gap: 60px;
+      margin-left: 640px;
+      margin-right: 30px;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .drop1:hover,
+    .drop2:hover,
+    .drop3:hover {
+      color: brown;
+      transition: ease-in-out;
+      font-weight: bold;
+    }
+
+    .book {
+      position: absolute;
+      top: 75px;
+      right: 545px;
+      background-color: whitesmoke;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      height: 120px;
+      width: 300px;
+      visibility: hidden;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .book p {
+      font-size: 15px;
+    }
+
+    p a:hover {
+      color: rgb(255, 0, 0);
+      font-size: 18px;
+
+    }
+
+    .drop1 {
+      position: absolute;
+      top: 13px;
+      right: 390px;
+    }
+
+    .drop2 {
+      position: absolute;
+      top: 13px;
+      right: 113px;
+    }
+
+    .before {
+      position: absolute;
+      top: 64px;
+      right: 546px;
+      border-bottom: 100px solid #fff;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      visibility: hidden;
+    }
+
+    .dropd1 {
+      position: absolute;
+      top: 5px;
+      right: 7px;
+    }
+
+    .dropd1:hover {
+      border-radius: 50%;
+      background-color: lightgray;
+      color: darkmagenta;
+    }
+
+    .info {
+      position: absolute;
+      top: 76px;
+      display: flex;
+      flex-direction: column;
+      right: 155px;
+      height: 150px;
+      width: 240px;
+      background-color: white;
+      gap: 10px;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      visibility: hidden;
+    }
+
+    .info a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .info a:hover {
+      font-weight: bold;
+      color: brown;
+    }
+
+    .before1 {
+      position: absolute;
+      top: 63px;
+      right: 159px;
+      border-bottom: 100px solid #fff;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      visibility: hidden;
+    }
+
+    .cont1 {
+      position: absolute;
+      top: 80px;
+      background-color: black;
+      color: white;
+      width: 100vw;
+      height: 50px;
+    }
+
+    .cont2 {
+      margin-top: 7px;
+      margin-left: 200px;
+      font-size: 35px;
+      word-spacing: 10px;
+      animation: Topic 11s infinite linear;
+      transition: 11s linear ease-in-out;
+      color: blanchedalmond;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    @keyframes Topic {
+      0% {
+        transform: translateX(1350px);
+        color: darksalmon;
+      }
+
+      75% {
+        color: darkcyan;
+      }
+
+      100% {
+        transform: translateX(-1350px);
+        color: darkkhaki;
+      }
+    }
+
+    footer {
+      background-color: darkblue;
+    }
+
+    footer span {
+      margin-left: 600px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .discount {
+      position: absolute;
+      top: 0;
+      padding: 5px 0;
+      width: 100%;
+      font-weight: bold;
+      background-color: bisque;
+      font-size: 20px;
+    }
+
+    .discount span {
+      margin-left: 8px;
+    }
+
+    .dis1 {
+      position: absolute;
+      right: 100px;
+      top: 5px;
+      font-weight: bold;
+    }
+
+    .img1 {
+      position: absolute;
+      top: 22%;
+      height: 500px;
+      width: 700px;
+      left: 28%;
+    }
+
+    .off1 {
+      position: absolute;
+      top: 172px;
+      left: 969px;
+      font-weight: bolder;
+    }
+
+    .off1:hover {
+      background-color: darkcyan;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .cont4 {
+      position: absolute;
+      top: 150px;
+      left: 20px;
+      font-size: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .hours,
+    .min,
+    .sec,
+    .date2,
+    .month,
+    .year {
+      font-weight: bold;
+    }
+
+    .pre {
+      position: absolute;
+      top: 300px;
+      height: 100px;
+      width: 100px;
+      left: 720px;
+    }
+
+    .datess {
+      margin-left: 70px;
+    }
+
+    .pre {
+      font-size: 100px;
+      height: 300px;
+      width: 300px;
+      margin-left: -125px;
+      margin-top: -87px;
+    }
+
+    #logout {
+      background-color: skyblue;
+      width: 80px;
+      height: 37px;
+      margin-top: -7px;
+      margin-left: 535px;
+      font-size: 20px;
+      position: absolute;
+      border: 3px solid black;
+      font-family: cambria;
+      font-weight: bolder;
+    }
+
+    #logout:hover {
+      background-color: rgb(96, 195, 234);
+      font-family: arial;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="img"></div>
+  <!-- Add a preloader div -->
+  <div class="preloader">
+    <img src="preloader.gif" class="pre" />
+  </div>
+  <!-- Add a container div to hold the content -->
+  <div class="container">
+    <div class="cont4">
+      <div class="date">
+        <span class="date2">00</span>
+        <span>-</span>
+        <span class="month">Feb</span>
+        <span>-</span>
+        <span class="year">2024</span>
+      </div>
+      <span>[</span>
+      <span class="hours">00</span>
+      <span>:</span>
+      <span class="min">00</span>
+      <span>:</span>
+      <span class="sec">00</span>
+      <span>]</span>
+    </div>
+    <div class="discount">
+      <span class="info1">Get up to 10% discount with ‘6Exclusive’ Special Fare on travel date
+        beyond </span>
+      <span class="datess">28-February-2024</span>
+      <ion-icon name="close-outline" class="dis1" style="font-size: 25px; cursor: pointer"
+        onclick="discount()"></ion-icon>
+    </div>
+    <div class="cont1">
+      <div class="cont2">Welcome to Dream Flights Online Ticket Booking</div>
+    </div>
+    <nav class="nav">
+      <p>Dream Flights</p>
+      <img src="logooo.png" class="img2" />
+      <ul>
+        <li style="text-decoration: none; color: black; font-weight: bolder;">
+          Book
+          <ion-icon name="chevron-down-outline" style="font-size: 17px; cursor: pointer" class="drop1"
+            onclick="drop1()"></ion-icon>
+        </li>
+        <li><a href="ChatWithus.html"
+            style="text-decoration: none; color: #6c0808; font-weight: bolder; text-decoration: underline;">Chat With
+            Tia</a></li>
+        <li style="text-decoration: none; color: black; font-weight: bolder;">
+          Info
+          <ion-icon name="chevron-down-outline" style="font-size: 17px; cursor: pointer" class="drop2"
+            onclick="Info()"></ion-icon>
+        </li>
+        <li><a href="more.html" style="text-decoration: none; color: black; font-weight: bolder;">More</a></li>
+        <button onclick="goback()" id="logout">Logout</button>
+      </ul>
+    </nav>
+    <div class="before"></div>
+    <div class="book">
+      <ion-icon name="close-outline" class="dropd1" style="font-size: 17px" onclick="drop2()"></ion-icon>
+      <p><a href="books.html" style="text-decoration: none; font-weight: bolder;">Single Booking</a></p>
+      <p><a href="books.html" style="text-decoration: none; font-weight: bolder;">Student Booking</a></p>
+      <p><a href="books.html" style="text-decoration: none; font-weight: bolder;">Family Booking</a></p>
+      <p><a href="books.html" style="text-decoration: none; font-weight: bolder;">Senior Citizen Booking</a></p>
+    </div>
+    <div class="before1"></div>
+    <div class="info">
+      <ion-icon name="close-outline" class="dropd1" style="font-size: 17px; cursor: pointer"
+        onclick="Info1()"></ion-icon>
+      <a href="luggage.html" onload="load()">Luggage Information</a>
+      <a href="feedback.html">FeedbBack Form</a>
+      <a href="mobile.html">Contact(with Phone Number)</a>
+      <a href="email.html">Contact(with Email)</a>
+    </div>
+    <footer>
+      <span>Copyright 2024 Dream Flights. All rights reserved.</span>
+    </footer>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    let drop = false;
+    let dropdown = document.querySelector(".book");
+    let triangle = document.querySelector(".before");
+    let drop1Icon = document.querySelector(".drop1");
+    let info = document.querySelector(".info");
+    let dropdown1 = document.querySelector(".drop2");
+    let triangle1 = document.querySelector(".before1");
+    function drop1() {
+      if (drop === false) {
+        dropdown.style.visibility = "visible";
+        triangle.style.visibility = "visible";
+        drop1Icon.style.visibility = "hidden";
+        drop = true;
+      } else if (drop === true) {
+        info.style.visibility = "hidden";
+        triangle1.style.visibility = "hidden";
+        dropdown1.style.visibility = "visible";
+        dropdown.style.visibility = "visible";
+        triangle.style.visibility = "visible";
+        drop1Icon.style.visibility = "hidden";
+      }
+    }
+    function drop2() {
+      dropdown.style.visibility = "hidden";
+      triangle.style.visibility = "hidden";
+      drop1Icon.style.visibility = "visible";
+      drop = false;
+    }
+    function Info() {
+      if (drop === false) {
+        info.style.visibility = "visible";
+        triangle1.style.visibility = "visible";
+        dropdown1.style.visibility = "hidden";
+        drop = true;
+      } else if (drop === true) {
+        dropdown.style.visibility = "hidden";
+        triangle.style.visibility = "hidden";
+        drop1Icon.style.visibility = "visible";
+        info.style.visibility = "visible";
+        triangle1.style.visibility = "visible";
+        dropdown1.style.visibility = "hidden";
+      }
+    }
+
+    function Info1() {
+      info.style.visibility = "hidden";
+      triangle1.style.visibility = "hidden";
+      dropdown1.style.visibility = "visible";
+      drop = false;
+    }
+
+    function discount() {
+      let but = document.querySelector(".discount");
+      but.style.visibility = "hidden";
+      let nav = document.querySelector(".nav");
+      nav.style.top = "20px";
+      let bef = document.querySelector(".before");
+      bef.style.top = "8px";
+      let bef1 = document.querySelector(".before1");
+      bef1.style.top = "8px";
+    }
+    setInterval(function dateTime() {
+      let date = new Date();
+      let hours = date.getHours();
+      let min = date.getMinutes();
+      let sec = date.getSeconds();
+
+      if (min < 10) {
+        min = "0" + min;
+      }
+      if (sec < 10) {
+        sec = "0" + sec;
+      }
+
+      if (hours < 10) {
+        hours = "0" + hours;
+      }
+      let hourtext = document.querySelector(".hours");
+      let mintext = document.querySelector(".min");
+      let sectext = document.querySelector(".sec");
+      hourtext.innerHTML = hours;
+      mintext.innerHTML = min;
+      sectext.innerHTML = sec;
+    }, 1000);
+    let date = new Date();
+    let date1 = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let date1text = document.querySelector(".date2");
+    let monthText = document.querySelector(".month");
+    let yearText = document.querySelector(".year");
+    date1text.innerHTML = (date1 < 10 ? "0" : "") + date1;
+    monthText.innerHTML = cheakMonthName(month);
+    yearText.innerHTML = year;
+    function cheakMonthName(num) {
+      if (num === 1) {
+        return "January";
+      } else if (num === 2) {
+        return "February";
+      } else if (num === 3) {
+        return "March";
+      } else if (num === 4) {
+        return "April";
+      } else if (num === 5) {
+        return "May";
+      } else if (num === 6) {
+        return "June";
+      } else if (num === 7) {
+        return "July";
+      } else if (num === 8) {
+        return "August";
+      } else if (num === 9) {
+        return "September";
+      } else if (num === 10) {
+        return "October";
+      } else if (num === 11) {
+        return "November";
+      } else if (num === 12) {
+        return "December";
+      }
+    }
+
+    window.addEventListener("load", function () {
+      setInterval(function () {
+        document.querySelector(".container").style.visibility = "visible";
+        document.querySelector(".preloader").style.visibility = "hidden";
+        document.querySelector(".img").style.visibility = "visible";
+      }, 2000);
+    });
+
+    let datesss = document.querySelector(".datess");
+
+    let newdate = new Date();
+    let datee = newdate.getDate();
+    let monthh = newdate.getMonth() + 1;
+    let yearr = newdate.getFullYear();
+    let Day = cheakMonthName(monthh);
+    let gg = datee + " - " + Day + " - " + yearr;
+    datesss.innerHTML = gg;
+
+    function goback() {
+      swal({
+        title: "Successfully Logout",
+        icon: "success",
+        className: "custom-swal"
+
+
+      });
+
+      setTimeout(function () {
+        window.location.assign("login.html");
+      }, 2000);
+
+    }
+  </script>
+</body>
+
+</html>

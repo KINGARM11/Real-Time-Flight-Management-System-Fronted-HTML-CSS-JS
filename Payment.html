@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+            background-color: #f10880;
+            color: white;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 1540px;
+            height: 100px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .text {
+            margin-left: 400px;
+            animation: rotates 10s linear infinite;
+
+        }
+
+        @keyframes rotates {
+            0% {
+                transform: translateX(-1150px);
+            }
+
+            100% {
+                transform: translateX(1300px);
+            }
+        }
+
+        ol {
+            line-height: 150px;
+            font-size: 50px;
+            color: #3c33aa;
+            font-family: arial;
+            font-weight: bolder;
+            margin-left: 20px;
+        }
+
+        #card a {
+            margin-left: 100px;
+            margin-top: 9px;
+            position: absolute;
+            font-size: 85px;
+            color: black;
+        }
+        #bank a {
+            margin-left: 589px;
+            margin-top: 9px;
+            position: absolute;
+            font-size: 85px;
+            color: black;
+        }
+        #ewal a {
+            margin-left: 658px;
+            margin-top: 9px;
+            position: absolute;
+            font-size: 85px;
+            color: black;
+        }
+        #other a {
+            margin-left: 306px;
+            margin-top: 9px;
+            position: absolute;
+            font-size: 85px;
+            color: black;
+        }
+        #upi a {
+            margin-left: 308px;
+            margin-top: 9px;
+            position: absolute;
+            font-size: 85px;
+            color: black;
+        }
+        .yes:hover{
+            color: rgb(19, 78, 228);
+            font-size: 88px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <div class="text">COMPLETE YOUR PAYMENT</div>
+    </h1>
+    <ol type="1">
+        <li id="card">Pay Through Credit & Debit Card<a href="CardAtm.html"><ion-icon
+                    name="arrow-forward-circle-sharp" class="yes"></ion-icon></a></li>
+        <li id="bank">Net Banking<a href="netbank.html"><ion-icon name="arrow-forward-circle-sharp" class="yes"></ion-icon></a></li>
+        <li id="ewal">E-Wallets<a href="wallet.html"><ion-icon name="arrow-forward-circle-sharp" class="yes"></ion-icon></a></li>
+        
+        <li id="upi">Pay Through BHIM / UPI<a href="upi.html"><ion-icon
+                    name="arrow-forward-circle-sharp" class="yes"></ion-icon></a></li>
+    </ol>
+    <script>
+        let card = document.getElementById("card");
+        let bank = document.getElementById("bank");
+        let wallet = document.getElementById("ewal");
+        let other = document.getElementById("other");
+        let upi = document.getElementById("upi");
+
+    </script>
+</body>
+
+</html>

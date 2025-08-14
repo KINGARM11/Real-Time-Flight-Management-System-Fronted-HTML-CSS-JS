@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD PASSENGERS DETAILS</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        element {
+            background-color: #ceffce
+        }
+
+        body {
+            background-color: #d3ffcf;
+
+        }
+
+        #selectF {
+            margin-left: 10px;
+            border: 4px solid black;
+            border-radius: 7px;
+            background-color: aquamarine;
+            display: inline;
+            width: 380px;
+        }
+
+        #indi,
+        #interr {
+            background-color: #a0c3ff;
+            border: 4px solid black;
+            border-radius: 7px;
+        }
+
+
+        #sel {
+            margin-left: -22px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        h1 {
+            background-color: cyan;
+            width: 1540px;
+            margin-left: -8px;
+            margin-top: -8px;
+            display: flex;
+            align-items: center;
+            height: 90px;
+            font-size: 55px;
+            text-decoration: underline;
+            padding-left: 396px;
+            font-family: rockwell;
+        }
+
+        .container {
+            height: 840px;
+            padding-top: 14px;
+            padding-left: 24px;
+            font-size: 30px;
+            font-family: arial;
+            font-weight: bolder;
+
+        }
+
+        input {
+            font-size: 25px;
+            border: 3px solid black;
+        }
+
+        #interr {
+            width: 440px;
+            position: relative;
+            visibility: hidden;
+            margin-left: -126px;
+        }
+
+        #indi {
+            visibility: hidden;
+            position: relative;
+            width: 413px;
+            margin-left: 150px;
+        }
+
+        select {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        #number {
+            font-size: 35px;
+            border-radius: 6px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .number2 {
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #lab {
+            font-size: 31px;
+            margin-left: -22px;
+            font-weight: bolder;
+        }
+
+        .india,
+        .foreign {
+            display: inline;
+        }
+
+        .choose {
+            display: inline;
+            margin-left: 10px;
+            visibility: hidden;
+        }
+
+        .foreign {
+            margin-left: -310px;
+        }
+
+        #seats {
+            visibility: hidden;
+        }
+
+        #price,
+        #time {
+
+            visibility: hidden;
+        }
+
+        #price {
+            display: flex;
+            flex-direction: column;
+            width: 295px;
+            margin-left: 1165px;
+            margin-top: -20px;
+        }
+
+        #cost1,
+        #cost2,
+        #cost3,
+        #cost4,
+        #cost5,
+        #cost6,
+        #cost7 {
+            margin-top: -27px;
+            border: 4px solid black;
+            position: absolute;
+            width: 413px;
+            margin-left: -358px;
+            border-radius: 7px;
+        }
+
+        #prices {
+            display: flex;
+            flex-direction: column;
+            width: 295px;
+            margin-left: 1177px;
+            margin-top: -3px;
+
+        }
+
+        #cost11,
+        #cost12,
+        #cost13,
+        #cost14,
+        #cost15,
+        #cost16,
+        #cost17,
+        #cost18,
+        #cost19,
+        #cost20,
+        #cost21,
+        #cost22,
+        #cost23,
+        #cost24 {
+            border: 4px solid black;
+            margin-top: -23px;
+            position: absolute;
+            width: 440px;
+            margin-left: -385px;
+            border-radius: 7px;
+        }
+
+        #time {
+            margin-left: 249px;
+            width: 380px;
+            background-color: bisque;
+            border: 4px solid black;
+            border-radius: 7px;
+        }
+
+        .india {
+            margin-left: 10px;
+        }
+
+        /* button:hover::after, .btn:hover::before {
+        content: '';
+        background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+        width: 100%;
+        height: 5000px;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+ 
+        animation: move-right-side 1s ease infinite;
+        } */
+        /* Global Styles */
+
+        #butta {
+            background-color: #6ee4ec;
+            font-size: 45px;
+            border-radius: 10px;
+            height: 80px;
+            font-family: century;
+            font-weight: bolder;
+            border: 3px solid black;
+            float: right;
+            margin-top: 236px;
+            display: none;
+        }
+
+
+
+
+        :root {
+            --font: calibri;
+            --size-pri: 1px;
+            --size-sec: 100px;
+            --main-clr: #0ebac5;
+            --white: #fff;
+        }
+
+        .btn {
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: calibri;
+            font-size: 1.2em;
+            border-radius: 100px;
+            cursor: pointer;
+            font-weight: 400;
+            position: relative;
+            border: 3px solid black;
+            color: var(--main-clr);
+            background-color: transparent;
+            overflow: hidden;
+            margin-top: 65px;
+            min-width: 227.52px;
+            min-height: 100px;
+            font-family: verdana;
+            font-weight: bolder;
+            font-size: 40px;
+            visibility: hidden;
+
+        }
+
+        .btn:hover i {
+            transform: translateX(10px);
+        }
+
+        .btn::before,
+        .btn::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -100%;
+            left: 0;
+            background-color: #ed2eac;
+            z-index: -1;
+            transition: all 400ms ease-in;
+            font-family: verdana;
+        }
+
+        .btn:hover {
+            color: #fff;
+            font-family: verdana;
+        }
+
+        .btn::before {
+            opacity: 0.3;
+            font-family: verdana;
+        }
+
+        .btn::after {
+            transition-delay: 0.3s;
+            font-family: verdana;
+        }
+
+        .btn:hover::before,
+        .btn:hover::after {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ADD PASSENGER DETAILS</h1>
+    <div class="container">
+        <form action="" name="forms">
+            <label for="number" class="number2">Enter Total No. of Passenger:</label>
+            <input type="number" id="number" onchange="enablePassengerDetails()"><br><br>
+            <div id="passengerDetails"></div>
+            <br>
+            <label for="" class="number2">Choose Flight:</label>
+            <select id="selectF" onchange="enableFlight()">
+                <option value="0">Select</option>
+                <option value="1" onchange="display()">India</option>
+                <option value="2" onchange="display()">International</option>
+            </select>
+            <div class="india">
+                <select name="indias" id="indi" onchange="enableFlight()">
+                    <option value="0" id="india0">Select Flight:</option>
+                    <option value="1" id="india1">Air Asia</option>
+                    <option value="2" id="india2">Air India</option>
+                    <option value="3" id="india3">Air India Express</option>
+                    <option value="4" id="india4">Go First</option>
+                    <option value="5" id="india5">Indigo</option>
+                    <option value="6" id="india6">SpiceJet</option>
+                    <option value="7" id="india7">Vistara</option>
+                </select>
+            </div>
+            <div class="foreign">
+                <select name="inter" id="interr" onchange="enableFlight()">
+                    <option value="0" id="interr">Select Flight</option>
+                    <option value="1" id="interr">Air France</option>
+                    <option value="2" id="interr">Emirates</option>
+                    <option value="3" id="interr">Qatar Airways</option>
+                    <option value="4" id="interr">Singapores Airlines</option>
+                    <option value="5" id="interr">Korean Air</option>
+                    <option value="6" id="interr">Lufthansa</option>
+                    <option value="7" id="interr">Air New Zealand</option>
+                    <option value="8" id="interr">Cathay Pacific</option>
+                    <option value="9" id="interr">Asiana Airlines</option>
+                    <option value="10" id="interr">Air China</option>
+                    <option value="11" id="interr">Air Arabia</option>
+                    <option value="12" id="interr">Shanghai Airlines</option>
+                    <option value="13" id="interr">British Airways</option>
+                    <option value="14" id="interr">Air Malaysia</option>
+                </select>
+            </div><br><br>
+            <div class="choose">
+                <select name="sets" id="time" style="visibility: hidden;" onchange="enableFlight()">
+                    <option value="0">Select Time</option>
+                    <option value="1">12:30 - 13:45</option>
+                    <option value="2">07:05 - 08:45</option>
+                    <option value="3">11:30 - 14:35</option>
+                    <option value="4">09:05 - 12:15</option>
+                    <option value="5">15:30 - 18:25</option>
+                    <option value="6">00:05 - 04:50</option>
+                    <option value="7">22:30 - 02:10</option>
+                    <option value="8">07:05 - 11:40</option>
+                    <option value="9">01:30 - 04:45</option>
+                    <option value="10">17:05 - 18:40</option>
+                    <option value="11">23:30 - 2:35</option>
+                    <option value="12">19:05 - 11:55</option>
+                    <option value="13">16:30 - 18:55</option>
+                    <option value="14">21:05 - 02:20</option>
+                    <option value="15">20:30 - 03:10</option>
+                    <option value="16">03:55 - 06:40</option>
+                    <option value="17">05:30 - 08:15</option>
+                    <option value="18">11:55 - 14:30</option>
+                    <option value="19">21:30 - 01:25</option>
+                    <option value="20">01:55 - 04:30</option>
+                </select>
+
+            </div>
+            <div class="price" id="price" style="visibility: hidden;">
+                <select name="air asia" id="cost1">
+                    <option value="0">Air Asia Prices:</option>
+                    <option value="1">Adult: 1000</option>
+                    <option value="2">Children: 500</option>
+                </select>
+                <select name="air india" id="cost2">
+                    <option value="0">Air India Prices:</option>
+                    <option value="1"> Adult: 1370</option>
+                    <option value="2">Children: 680 Rs.</option>
+                </select>
+                <select name="air india express" id="cost3">
+                    <option value="0">Air India Express Prices:</option>
+                    <option value="1"> Adult: 1500 Rs.</option>
+                    <option value="2">Children: 800 Rs.</option>
+                </select>
+                <select name="go first" id="cost4">
+                    <option value="0">Go First Prices:</option>
+                    <option value="1"> Adult: 2500 Rs.</option>
+                    <option value="2">Children: 1300 Rs.</option>
+                </select>
+                <select name="indigo" id="cost5">
+                    <option value="0">Indigo Prices:</option>
+                    <option value="1"> Adult: 4900 Rs.</option>
+                    <option value="2">Children:3300 Rs.</option>
+                </select>
+                <select name="spice jet" id="cost6">
+                    <option value="0">Spice Jet Prices:</option>
+                    <option value="1"> Adult: 3100 Rs.</option>
+                    <option value="2">Children: 2200 Rs.</option>
+                </select>
+                <select name="vistara" id="cost7">
+                    <option value="0">Vistara Prices:</option>
+                    <option value="1"> Adult: 3900 Rs.</option>
+                    <option value="2">Children: 2500 Rs.</option>
+                </select>
+            </div>
+
+            <div class="price" id="prices" style="visibility: hidden;">
+                <select name="1" id="cost11">
+                    <option value="0">Air France Prices:</option>
+                    <option value="1"> Adult: 11700 Rs.</option>
+                    <option value="2">Children: 10000 Rs.</option>
+                </select>
+                <select name="2" id="cost12">
+                    <option value="0">Emirates Prices:</option>
+                    <option value="1"> Adult: 13850 Rs.</option>
+                    <option value="2">Children: 11680 Rs.</option>
+                </select>
+                <select name="3" id="cost13">
+                    <option value="0">Qatar Airways Prices:</option>
+                    <option value="1"> Adult: 15500 Rs.</option>
+                    <option value="2">Children: 12800 Rs.</option>
+                </select>
+                <select name="4" id="cost14">
+                    <option value="0">Singapores Airlines Prices:</option>
+                    <option value="1"> Adult: 21500 Rs.</option>
+                    <option value="2">Children: 18300 Rs.</option>
+                </select>
+                <select name="5" id="cost15">
+                    <option value="0">Korean Air Prices:</option>
+                    <option value="1"> Adult: 28900 Rs.</option>
+                    <option value="2">Children:20300 Rs.</option>
+                </select>
+                <select name="6" id="cost16">
+                    <option value="0">Lufthansa Prices:</option>
+                    <option value="1"> Adult: 32100 Rs.</option>
+                    <option value="2">Children: 25200 Rs.</option>
+                </select>
+                <select name="7" id="cost17">
+                    <option value="0">Air New Zealand Prices:</option>
+                    <option value="1"> Adult: 39550 Rs.</option>
+                    <option value="2">Children: 30500 Rs.</option>
+                </select>
+                <select name="8" id="cost18">
+                    <option value="0">Cathay Pacific Prices:</option>
+                    <option value="1"> Adult: 41700 Rs.</option>
+                    <option value="2">Children: 35000 Rs.</option>
+                </select>
+                <select name="9" id="cost19">
+                    <option value="0">Asiana Airlines Prices:</option>
+                    <option value="1"> Adult: 49850 Rs.</option>
+                    <option value="2">Children: 36680 Rs.</option>
+                </select>
+                <select name="10" id="cost20">
+                    <option value="0">Air China Prices:</option>
+                    <option value="1"> Adult: 50500 Rs.</option>
+                    <option value="2">Children: 41800 Rs.</option>
+                </select>
+                <select name="11" id="cost21">
+                    <option value="0">Air Arabia Prices:</option>
+                    <option value="1"> Adult: 55500 Rs.</option>
+                    <option value="2">Children: 46300 Rs.</option>
+                </select>
+                <select name="12" id="cost22">
+                    <option value="0">Shanghai Airlines Prices:</option>
+                    <option value="1"> Adult: 59950 Rs.</option>
+                    <option value="2">Children:45300 Rs.</option>
+                </select>
+                <select name="13" id="cost23">
+                    <option value="0">British Airways Prices:</option>
+                    <option value="1"> Adult: 65000 Rs.</option>
+                    <option value="2">Children: 51200 Rs.</option>
+                </select>
+                <select name="14" id="cost24">
+                    <option value="0">Air Malaysia Prices:</option>
+                    <option value="1"> Adult: 70550 Rs.</option>
+                    <option value="2">Children: 59805 Rs.</option>
+                </select>
+
+            </div>
+            <button type="button" id="paymentButton" style="display: none;" onclick="Payment()">Pay Now</button>
+            <button type="button" id="but" class="btn" onclick="confirmSubmission()">Submit</button>
+            <!-- <button type="button" id="butta" onclick="Payment()">Pay Now</button> -->
+        </form>
+    </div>
+    <script>
+        function enableFlight() {
+            let int = document.getElementById("selectF");
+            let indiaSelect = document.getElementById("indi");
+            let interrSelect = document.getElementById("interr");
+            let time = document.getElementById("time");
+            let cost1 = document.getElementById("cost1");
+            let cost2 = document.getElementById("cost2");
+            let cost3 = document.getElementById("cost3");
+            let cost4 = document.getElementById("cost4");
+            let cost5 = document.getElementById("cost5");
+            let cost6 = document.getElementById("cost6");
+            let cost7 = document.getElementById("cost7");
+            let cost11 = document.getElementById("cost11");
+            let cost12 = document.getElementById("cost12");
+            let cost13 = document.getElementById("cost13");
+            let cost14 = document.getElementById("cost14");
+            let cost15 = document.getElementById("cost15");
+            let cost16 = document.getElementById("cost16");
+            let cost17 = document.getElementById("cost17");
+            let cost18 = document.getElementById("cost18");
+            let cost19 = document.getElementById("cost19");
+            let cost20 = document.getElementById("cost20");
+            let cost21 = document.getElementById("cost21");
+            let cost22 = document.getElementById("cost22");
+            let cost23 = document.getElementById("cost23");
+            let cost24 = document.getElementById("cost24");
+
+
+            // Hide all costs by default
+            cost1.style.visibility = "hidden";
+            cost2.style.visibility = "hidden";
+            cost3.style.visibility = "hidden";
+            cost4.style.visibility = "hidden";
+            cost5.style.visibility = "hidden";
+            cost6.style.visibility = "hidden";
+            cost7.style.visibility = "hidden";
+            cost11.style.visibility = "hidden";
+            cost12.style.visibility = "hidden";
+            cost13.style.visibility = "hidden";
+            cost14.style.visibility = "hidden";
+            cost15.style.visibility = "hidden";
+            cost16.style.visibility = "hidden";
+            cost17.style.visibility = "hidden";
+            cost18.style.visibility = "hidden";
+            cost19.style.visibility = "hidden";
+            cost20.style.visibility = "hidden";
+            cost21.style.visibility = "hidden";
+            cost22.style.visibility = "hidden";
+            cost23.style.visibility = "hidden";
+            cost24.style.visibility = "hidden";
+
+            if (int.value == "1") {
+                document.getElementById("indi").style.visibility = "visible";
+                document.getElementById("interr").style.visibility = "hidden";
+                document.getElementById("time").style.visibility = "visible";
+
+                // Show only the selected airline's cost
+                switch (indiaSelect.value) {
+                    case "1":
+                        cost1.style.visibility = "visible";
+                        break;
+                    case "2":
+                        cost2.style.visibility = "visible";
+                        break;
+                    case "3":
+                        cost3.style.visibility = "visible";
+                        break;
+                    case "4":
+                        cost4.style.visibility = "visible";
+                        break;
+                    case "5":
+                        cost5.style.visibility = "visible";
+                        break;
+                    case "6":
+                        cost6.style.visibility = "visible";
+                        break;
+                    case "7":
+                        cost7.style.visibility = "visible";
+                        break;
+                }
+            }
+            else if (int.value == "2") {
+                document.getElementById("indi").style.visibility = "hidden";
+                document.getElementById("interr").style.visibility = "visible";
+                document.getElementById("time").style.visibility = "visible";
+                switch (interrSelect.value) {
+                    case "1":
+                        cost11.style.visibility = "visible";
+                        break;
+                    case "2":
+                        cost12.style.visibility = "visible";
+                        break;
+                    case "3":
+                        cost13.style.visibility = "visible";
+                        break;
+                    case "4":
+                        cost14.style.visibility = "visible";
+                        break;
+                    case "5":
+                        cost15.style.visibility = "visible";
+                        break;
+                    case "6":
+                        cost16.style.visibility = "visible";
+                        break;
+                    case "7":
+                        cost17.style.visibility = "visible";
+                        break;
+                    case "8":
+                        cost18.style.visibility = "visible";
+                        break;
+                    case "9":
+                        cost19.style.visibility = "visible";
+                        break;
+                    case "10":
+                        cost20.style.visibility = "visible";
+                        break;
+                    case "11":
+                        cost21.style.visibility = "visible";
+                        break;
+                    case "12":
+                        cost22.style.visibility = "visible";
+                        break;
+                    case "13":
+                        cost23.style.visibility = "visible";
+                        break;
+                    case "14":
+                        cost24.style.visibility = "visible";
+                        break;
+                }
+            }
+
+
+            if (int.value == "0") {
+                document.getElementById("indi").style.visibility = "hidden";
+                document.getElementById("interr").style.visibility = "hidden";
+                document.getElementById("time").style.visibility = "hidden";
+
+            }
+
+
+        }
+        function enablePassengerDetails() {
+            let numPassengers = parseInt(document.getElementById("number").value);
+            let passengerDetails = document.getElementById("passengerDetails");
+            passengerDetails.innerHTML = "";
+
+            for (let i = 0; i < numPassengers; i++) {
+                passengerDetails.innerHTML += `
+                    <div>
+                        <h3 style="font-size:35px;color: crimson;">Passenger ${i + 1} Details:</h3>
+                        <label for="title${i}"></label>
+                        <input type="radio" id="rad1${i}" name="title${i}">Mr.
+                        <input type="radio" id="rad2${i}" name="title${i}">Mrs.
+                        <input type="radio" id="rad3${i}" name="title${i}">Ms.<br><br>
+                        <label for="fname${i}">First Name:</label>
+                        <input type="text" id="fname${i}" name="fname${i}"><br><br>
+                        <label for="lname${i}">Last Name:</label>
+                        <input type="text" id="lname${i}" name="lname${i}"><br><br>
+                        <label for="dob${i}">Date of Birth:</label>
+                        <input type="date" id="dob${i}" name="dob${i}"><br><br>
+                        <label for="age${i}">Age:</label>
+                        <input type="number" id="age${i}" name="age${i}"><br><br>
+                        <label for="num${i}">Mobile Number:</label>
+                        <input type="tel" id="num${i}" name="num${i}"><br><br>
+                        <label for="email${i}">Email Id.:</label>
+                        <input type="email" id="email${i}" name="email${i}" placeholder="xyz2024@gmail.com"><br><br>
+                        <label for="seatSelection${i}">Seat Type:</label>
+                        <select id="seatSelection${i}" name="seatSelection${i}">
+                            <optgroup label="Select Seat">
+                                <option value=""><b>Select</b></option>
+                                <optgroup label="------------------Row 1---------------------"></optgroup>
+                                <option value="1A (Window)">1A (Window)</option>
+                                <option value="1B (Middle)">1B (Middle)</option>
+                                <option value="1C (Side)">1C (Side)</option>
+                                <optgroup label="------------------Row 2---------------------"></optgroup>
+                                <option value="2A (Window)">2A (Window)</option>
+                                <option value="2B (Middle)">2B (Middle)</option>
+                                <option value="2C (Side)">2C (Side)</option>
+                                <optgroup label="------------------Row 3---------------------"></optgroup>
+                                <option value="3A (Window)">3A (Window)</option>
+                                <option value="3B (Middle)">3B (Middle)</option>
+                                <option value="3C (Side)">3C (Side)</option>
+                                <optgroup label="------------------Row 4---------------------"></optgroup>
+                                <option value="4A (Window)">4A (Window)</option>
+                                <option value="4B (Middle)">4B (Middle)</option>
+                                <option value="4C (Side)">4C (Side)</option>
+                                <optgroup label="------------------Row 5---------------------"></optgroup>
+                                <option value="5A (Window)">5A (Window)</option>
+                                <option value="5B (Middle)">5B (Middle)</option>
+                                <option value="5C (Side)">5C (Side)</option>
+                                <optgroup label="------------------Row 6---------------------"></optgroup>
+                                <option value="6A (Window)">6A (Window)</option>
+                                <option value="6B (Middle)">6B (Middle)</option>
+                                <option value="6C (Side)">6C (Side)</option>
+                                <optgroup label="------------------Row 7---------------------"></optgroup>
+                                <option value="7A (Window)">7A (Window)</option>
+                                <option value="7B (Middle)">7B (Middle)</option>
+                                <option value="7C (Side)">7C (Side)</option>
+                                <optgroup label="------------------Row 8---------------------"></optgroup>
+                                <option value="8A (Window)">8A (Window)</option>
+                                <option value="8B (Middle)">8B (Middle)</option>
+                                <option value="8C (Side)">8C (Side)</option>
+                                <optgroup label="------------------Row 9---------------------"></optgroup>
+                                <option value="9A (Window)">9A (Window)</option>
+                                <option value="9B (Middle)">9B (Middle)</option>
+                                <option value="9C (Side)">9C (Side)</option>
+                                <optgroup label="------------------Row 10---------------------"></optgroup>
+                                <option value="10A (Window)">10A (Window)</option>
+                                <option value="10B (Middle)">10B (Middle)</option>
+                                <option value="10C (Side)">10C (Side)</option>
+                                <optgroup label="------------------Row 11---------------------"></optgroup>
+                                <option value="11A (Window)">11A (Window)</option>
+                                <option value="11B (Middle)">11B (Middle)</option>
+                                <option value="11C (Side)">11C (Side)</option>
+                                <optgroup label="------------------Row 12---------------------"></optgroup>
+                                <option value="12A (Window)">12A (Window)</option>
+                                <option value="12B (Middle)">12B (Middle)</option>
+                                <option value="12C (Side)">12C (Side)</option>
+                                <optgroup label="------------------Row 13---------------------"></optgroup>
+                                <option value="13A (Window)">13A (Window)</option>
+                                <option value="13B (Middle)">13B (Middle)</option>
+                                <option value="13C (Side)">13C (Side)</option>
+                                <optgroup label="------------------Row 14---------------------"></optgroup>
+                                <option value="14A (Window)">14A (Window)</option>
+                                <option value="14B (Middle)">14B (Middle)</option>
+                                <option value="14C (Side)">14C (Side)</option>
+                                <optgroup label="------------------Row 15---------------------"></optgroup>
+                                <option value="15A (Window)">15A (Window)</option>
+                                <option value="15B (Middle)">15B (Middle)</option>
+                                <option value="15C (Side)">15C (Side)</option>
+                                <optgroup label="-----------------------X-----------------------"></optgroup>
+                            </optgroup>
+                            
+                        </select><br><br>
+                    </div>
+                `;
+            }
+            document.getElementById("but").style.visibility = "visible";
+
+        }
+
+        function confirmSubmission() {
+            Swal.fire({
+                title: 'Confirm Submission',
+                text: 'Are you sure, You want to Submit the Details?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.assign("AddPassengerform.html");
+                } else {
+                    display();
+
+                }
+            });
+        }
+        function display() {
+            let numPassengers = parseInt(document.getElementById("number").value);
+            let buttons = document.getElementById("but").visibility = "visible";
+            let displayContainer = document.createElement("div");
+            displayContainer.id = "passengerDetails"; // Assign an ID to the display container
+            let errorMessage = "";
+            for (let i = 0; i < numPassengers; i++) {
+                let rad1 = document.getElementById("rad1" + i).checked ? "Mr." : "";
+                let rad2 = document.getElementById("rad2" + i).checked ? "Mrs." : "";
+                let rad3 = document.getElementById("rad3" + i).checked ? "Ms." : "";
+                let fname = document.getElementById("fname" + i).value;
+                let lname = document.getElementById("lname" + i).value;
+                let dob = document.getElementById("dob" + i).value;
+                let age = document.getElementById("age" + i).value;
+                let mobnum = document.getElementById("num" + i).value;
+                let email = document.getElementById("email" + i).value;
+                let passengerDetails = document.createElement("div");
+                let seatSelection = document.getElementById(`seatSelection${i}`).value;
+
+
+                if (!field(i + 1)) {
+                    alert("Please Enter All the Fields for Passenger " + (i + 1) + "\n");
+                    return;
+                } else if (!validnum(mobnum)) {
+                    alert("Please Enter a 10-digit Mobile Number for Passenger " + (i + 1));
+                    return;
+                } else if (!validemail(email)) {
+                    alert("Please Enter a Correct Email for Passenger " + (i + 1));
+                    return;
+                }
+                if (age >= 18) {
+                    let dobFormatted = new Date(dob);
+                    let day = dobFormatted.getDate();
+                    let month = dobFormatted.getMonth() + 1;
+                    let year = dobFormatted.getFullYear();
+                    let dobDisplay = day + '/' + month + '/' + year;
+                    passengerDetails.innerHTML = `
+                    <br><br>
+                    <div style='font-size:30px; font-weight:bolder; color:blue;text-decoration:underline;'>PASSENGERS ${i + 1} DETAILS:</div>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Name: ${rad1} ${rad2} ${rad3} ${fname} ${lname}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Date of Birth: ${dobDisplay}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Age: ${age}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Mobile Number: ${mobnum}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Email Id.: ${email}</p>   
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Seat Selection: ${seatSelection}</p>
+                `;
+
+                }
+
+                if (age < 18 && age > 0) {
+                    let dobFormatted = new Date(dob);
+                    let day = dobFormatted.getDate();
+                    let month = dobFormatted.getMonth() + 1;
+                    let year = dobFormatted.getFullYear();
+                    let dobDisplay = day + '/' + month + '/' + year;
+                    passengerDetails.innerHTML = `
+                    <br><br>
+                    <div style='font-size:30px; font-weight:bolder; color:blue;text-decoration:underline;'>PASSENGERS ${i + 1} DETAILS:</div>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Name: ${rad1} ${rad2} ${rad3} ${fname} ${lname}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Date of Birth: ${dobDisplay}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Age: ${age}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Mobile Number: ${mobnum}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Email Id.: ${email}</p>
+                    <p style='font-size:23px; font-family:arial; font-weight:bold;'>Seat Selection: ${seatSelection}</p>
+                `;
+                }
+                displayContainer.appendChild(passengerDetails);
+
+
+            }
+            var Flight = document.getElementById("indi");
+            var selectedOption = Flight.options[Flight.selectedIndex];
+            var selectedText = selectedOption.text;               // displaying text of option value
+
+            var time = document.getElementById("time");
+            var selectTime = time.options[time.selectedIndex];
+            var TimeDisplay = selectTime.text;
+
+            var FlightInter = document.getElementById("interr");
+            var selectFlight = FlightInter.options[FlightInter.selectedIndex];
+            var SelectFlightInter = selectFlight.text;
+
+            var fs = document.getElementById("selectF");
+
+            printPrice(numPassengers);
+            let existingDisplayContainer = document.getElementById("passengerDetails");
+            if (existingDisplayContainer) {
+                existingDisplayContainer.parentNode.removeChild(existingDisplayContainer);
+            }
+
+            document.body.appendChild(displayContainer);
+
+            if (numPassengers === 0 || isNaN(numPassengers) || numPassengers === "") {
+                alert("Please Enter Number of Passengers Travelling !!");
+                window.location.assign("AddPassengerform.html");
+            }
+            if (numPassengers > 0) {
+
+                let PNRValue = "";
+                let value = Math.floor(10000000 + Math.random() * 90000000);
+                PNRValue = value;
+                document.body.style.backgroundColor = "#ceffce";
+
+                document.write("<div style='text-align:center; font-size:26px;'>" + "************************************************************" + "</div>" + "<br>");
+
+                if (fs.value == "1") {
+                    switch (Flight.value) {
+                        case "1": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "2": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "3": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "4": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "5": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "6": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        case "7": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + selectedText + "*" + "</div>"); break;
+                        default: document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Please Select Any Flight !!" + "*" + "</div>"); break;
+                    }
+                } else if (fs.value == "2") {
+                    switch (FlightInter.value) {
+                        case "1": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "2": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "3": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "4": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "5": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "6": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color:#f5002b; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "7": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "8": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "9": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "10": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "11": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "12": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "13": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        case "14": document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Your Flight Name = " + SelectFlightInter + "*" + "</div>"); break
+                        default: document.write("<div style='font-size:35px; text-align:center;margin-top:11px; font-weight:bolder; color: #ff0080; font-family: arial;'>" + "*" + "Please Select Any Flight !!" + "*" + "</div>"); break;
+                    }
+                }
+                document.write("<div style='font-size:30px; text-align:center;margin-top:11px; font-weight:bolder;font-family: arial;color:#6702c3'>" + "*" + "Your Flight Timing = " + TimeDisplay + "*" + "</div>");
+                document.write("<div style='font-size:35px; text-align:center;margin-top:15px; font-weight:bolder;color: #ff0080;font-family: arial;'>" + "*" + "Your PNR Number = " + PNRValue + "*" + "</div>");
+                document.write("<br>" + "<div style='text-align:center;font-size:26px;'>" + "************************************************************" + "</div>");
+
+            }
+            Payment();
+
+        }
+
+        function validnum(number) {
+            console.log("Validating number: " + number);
+            let vnum = /^[0-9]{10}$/;
+            return vnum.test(number);
+        }
+        function validemail(email) {
+            let vemail = /\S+@\S+\.\S+/
+            return vemail.test(email);
+        }
+        function field(numPassengers) {
+
+            for (let i = 0; i < numPassengers; i++) {
+                let fname = document.getElementById("fname" + i).value;
+                let lname = document.getElementById("lname" + i).value;
+                let dob = document.getElementById("dob" + i).value;
+                let age = document.getElementById("age" + i).value;
+                let mobnum = document.getElementById("num" + i).value;
+                let email = document.getElementById("email" + i).value;
+
+                if (fname == "" || lname == "" || dob == "" || age == "") {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function printPrice(ticket) {
+
+            var time = document.getElementById("time");
+            var selectTime = time.options[time.selectedIndex];
+            var TimeDisplay = selectTime.text;
+
+            let selectFlights = document.getElementById("selectF");
+
+            if (selectFlights.value == "1") {
+                let numPassengers = document.getElementById("number").value;
+                let indian = document.getElementById("indi");
+                switch (indian.value) {
+                    case "1": let p1 = document.querySelectorAll("#cost1 option")
+                        let countA = 0;
+                        let countC = 0;
+                        // let numPassengers = document.getElementById("number").value;
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC++;
+                            }
+
+                        }
+                        let costA;
+                        let costC;
+                        p1.forEach(option => {
+                            if (option.value === "1") {
+                                costA = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum = countA * costA + countC * costC;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA + " Adult & " + countC + " Children = " + sum + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "2": let p2 = document.querySelectorAll("#cost2 option")
+                        let countA1 = 0;
+                        let countC1 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age1 = parseInt(document.getElementById("age" + i).value);
+                            if (age1 >= 18) {
+                                countA1++;
+                            }
+                            else if (age1 < 18 && age1 > 0) {
+                                countC1++;
+                            }
+
+                        }
+                        let costA1;
+                        let costC1;
+                        p2.forEach(option => {
+                            if (option.value === "1") {
+                                costA1 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC1 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum1 = countA1 * costA1 + countC1 * costC1;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA1 + " Adult & " + countC1 + " Children = " + sum1 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "3": let p3 = document.querySelectorAll("#cost3 option")
+                        let countA2 = 0;
+                        let countC2 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age2 = parseInt(document.getElementById("age" + i).value);
+                            if (age2 >= 18) {
+                                countA2++;
+                            }
+                            else if (age2 < 18 && age2 > 0) {
+                                countC2++;
+                            }
+
+                        }
+                        let costA2;
+                        let costC2;
+                        p3.forEach(option => {
+                            if (option.value === "1") {
+                                costA2 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC2 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum2 = countA2 * costA2 + countC2 * costC2;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA2 + " Adult & " + countC2 + " Children = " + sum2 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "4": let p4 = document.querySelectorAll("#cost4 option")
+                        let countA3 = 0;
+                        let countC3 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age2 = parseInt(document.getElementById("age" + i).value);
+                            if (age2 >= 18) {
+                                countA3++;
+                            }
+                            else if (age2 < 18 && age2 > 0) {
+                                countC3++;
+                            }
+
+                        }
+                        let costA3;
+                        let costC3;
+                        p4.forEach(option => {
+                            if (option.value === "1") {
+                                costA3 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC3 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum3 = countA3 * costA3 + countC3 * costC3;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA3 + " Adult & " + countC3 + " Children = " + sum3 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "5": let p5 = document.querySelectorAll("#cost5 option")
+                        let countA4 = 0;
+                        let countC4 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age2 = parseInt(document.getElementById("age" + i).value);
+                            if (age2 >= 18) {
+                                countA4++;
+                            }
+                            else if (age2 < 18 && age2 > 0) {
+                                countC4++;
+                            }
+
+                        }
+                        let costA4;
+                        let costC4;
+                        p5.forEach(option => {
+                            if (option.value === "1") {
+                                costA4 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC4 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum4 = countA4 * costA4 + countC4 * costC4;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA4 + " Adult & " + countC4 + " Children = " + sum4 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "6": let p6 = document.querySelectorAll("#cost6 option")
+                        let countA5 = 0;
+                        let countC5 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age2 = parseInt(document.getElementById("age" + i).value);
+                            if (age2 >= 18) {
+                                countA5++;
+                            }
+                            else if (age2 < 18 && age2 > 0) {
+                                countC5++;
+                            }
+
+                        }
+                        let costA5;
+                        let costC5;
+                        p6.forEach(option => {
+                            if (option.value === "1") {
+                                costA5 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC5 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum5 = countA5 * costA5 + countC5 * costC5;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA5 + " Adult & " + countC5 + " Children = " + sum5 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "7": let p7 = document.querySelectorAll("#cost7 option")
+                        let countA7 = 0;
+                        let countC7 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age2 = parseInt(document.getElementById("age" + i).value);
+                            if (age2 >= 18) {
+                                countA7++;
+                            }
+                            else if (age2 < 18 && age2 > 0) {
+                                countC7++;
+                            }
+
+                        }
+                        let costA7;
+                        let costC7;
+                        p7.forEach(option => {
+                            if (option.value === "1") {
+                                costA7 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC7 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum7 = countA7 * costA7 + countC7 * costC7;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA7 + " Adult & " + countC7 + " Children = " + sum7 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+
+                }
+            }
+            else if (selectFlights.value == "2") {
+                let numPassengers = document.getElementById("number").value;
+                let international = document.getElementById("interr");
+                switch (international.value) {
+                    case "1": let p11 = document.querySelectorAll("#cost11 option")
+                        let countA11 = 0;
+                        let countC11 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA11++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC11++;
+                            }
+
+                        }
+                        let costA11;
+                        let costC11;
+                        p11.forEach(option => {
+                            if (option.value === "1") {
+                                costA11 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC11 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum11 = countA11 * costA11 + countC11 * costC11;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA11 + " Adult & " + countC11 + " Children = " + sum11 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+
+                    case "2": let p12 = document.querySelectorAll("#cost12 option")
+                        let countA12 = 0;
+                        let countC12 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA12++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC12++;
+                            }
+
+                        }
+                        let costA12;
+                        let costC12;
+                        p12.forEach(option => {
+                            if (option.value === "1") {
+                                costA12 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC12 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum12 = countA12 * costA12 + countC12 * costC12;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA12 + " Adult & " + countC12 + " Children = " + sum12 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "3": let p13 = document.querySelectorAll("#cost13 option")
+                        let countA13 = 0;
+                        let countC13 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA13++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC13++;
+                            }
+
+                        }
+                        let costA13;
+                        let costC13;
+                        p13.forEach(option => {
+                            if (option.value === "1") {
+                                costA13 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC13 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum13 = countA13 * costA13 + countC13 * costC13;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA13 + " Adult & " + countC13 + " Children = " + sum13 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "4": let p14 = document.querySelectorAll("#cost14 option")
+                        let countA14 = 0;
+                        let countC14 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA14++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC14++;
+                            }
+
+                        }
+                        let costA14;
+                        let costC14;
+                        p14.forEach(option => {
+                            if (option.value === "1") {
+                                costA14 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC14 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum14 = countA14 * costA14 + countC14 * costC14;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA14 + " Adult & " + countC14 + " Children = " + sum14 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "5": let p15 = document.querySelectorAll("#cost15 option")
+                        let countA15 = 0;
+                        let countC15 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA15++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC15++;
+                            }
+
+                        }
+                        let costA15;
+                        let costC15;
+                        p15.forEach(option => {
+                            if (option.value === "1") {
+                                costA15 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC15 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum15 = countA15 * costA15 + countC15 * costC15;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA15 + " Adult & " + countC15 + " Children = " + sum15 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "6": let p16 = document.querySelectorAll("#cost16 option")
+                        let countA16 = 0;
+                        let countC16 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA16++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC16++;
+                            }
+
+                        }
+                        let costA16;
+                        let costC16;
+                        p16.forEach(option => {
+                            if (option.value === "1") {
+                                costA16 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC16 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum16 = countA16 * costA16 + countC16 * costC16;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA16 + " Adult & " + countC16 + " Children = " + sum16 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "7": let p17 = document.querySelectorAll("#cost17 option")
+                        let countA17 = 0;
+                        let countC17 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA17++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC17++;
+                            }
+
+                        }
+                        let costA17;
+                        let costC17;
+                        p17.forEach(option => {
+                            if (option.value === "1") {
+                                costA17 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC17 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum17 = countA17 * costA17 + countC17 * costC17;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA17 + " Adult & " + countC17 + " Children = " + sum17 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "8": let p18 = document.querySelectorAll("#cost18 option")
+                        let countA18 = 0;
+                        let countC18 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA18++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC18++;
+                            }
+
+                        }
+                        let costA18;
+                        let costC18;
+                        p18.forEach(option => {
+                            if (option.value === "1") {
+                                costA18 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC18 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum18 = countA18 * costA18 + countC18 * costC18;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA18 + " Adult & " + countC18 + " Children = " + sum18 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "9": let p19 = document.querySelectorAll("#cost19 option")
+                        let countA19 = 0;
+                        let countC19 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA19++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC19++;
+                            }
+
+                        }
+                        let costA19;
+                        let costC19;
+                        p19.forEach(option => {
+                            if (option.value === "1") {
+                                costA19 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC19 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum19 = countA19 * costA19 + countC19 * costC19;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA19 + " Adult & " + countC19 + " Children = " + sum19 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "10": let p120 = document.querySelectorAll("#cost20 option")
+                        let countA120 = 0;
+                        let countC120 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA120++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC120++;
+                            }
+
+                        }
+                        let costA120;
+                        let costC120;
+                        p120.forEach(option => {
+                            if (option.value === "1") {
+                                costA120 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC120 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum120 = countA120 * costA120 + countC120 * costC120;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA120 + " Adult & " + countC120 + " Children = " + sum120 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "11": let p111 = document.querySelectorAll("#cost21 option")
+                        let countA111 = 0;
+                        let countC111 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA111++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC111++;
+                            }
+
+                        }
+                        let costA111;
+                        let costC111;
+                        p111.forEach(option => {
+                            if (option.value === "1") {
+                                costA111 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC111 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum111 = countA111 * costA111 + countC111 * costC111;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA111 + " Adult & " + countC111 + " Children = " + sum111 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "12": let p112 = document.querySelectorAll("#cost22 option")
+                        let countA112 = 0;
+                        let countC112 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA112++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC112++;
+                            }
+
+                        }
+                        let costA112;
+                        let costC112;
+                        p112.forEach(option => {
+                            if (option.value === "1") {
+                                costA112 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC112 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum112 = countA112 * costA112 + countC112 * costC112;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA112 + " Adult & " + countC112 + " Children = " + sum112 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "13": let p114 = document.querySelectorAll("#cost23 option")
+                        let countA114 = 0;
+                        let countC114 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA114++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC114++;
+                            }
+
+                        }
+                        let costA114;
+                        let costC114;
+                        p114.forEach(option => {
+                            if (option.value === "1") {
+                                costA114 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC114 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum114 = countA114 * costA114 + countC114 * costC114;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA114 + " Adult & " + countC114 + " Children = " + sum114 + " Rs.</b></div></div>");
+
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                    case "14": let p115 = document.querySelectorAll("#cost24 option")
+                        let countA115 = 0;
+                        let countC115 = 0;
+
+                        for (let i = 0; i < numPassengers; i++) {
+                            let age = parseInt(document.getElementById("age" + i).value);
+                            if (age >= 18) {
+                                countA115++;
+                            }
+                            else if (age < 18 && age > 0) {
+                                countC115++;
+                            }
+
+                        }
+                        let costA115;
+                        let costC115;
+                        p115.forEach(option => {
+                            if (option.value === "1") {
+                                costA115 = parseInt(option.innerText.match(/\d+/)[0]);
+                            } else if (option.value === "2") {
+                                costC115 = parseInt(option.innerText.match(/\d+/)[0]);
+                            }
+                        });
+
+                        let sum115 = countA115 * costA115 + countC115 * costC115;
+
+                        document.write("<div style='margin-top: -30px;margin-left: -10px;'><br><b style='font-size:30px; font-family:Verdana;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        document.write("<div style='display: flex; align-items: center; justify-content: center;'><div style='text-align:center; margin-top: 10px;'><b style='font-size:30px; font-family:Verdana;'>Total Ticket Price for " + countA115 + " Adult & " + countC115 + " Children = " + sum115 + " Rs.</b></div></div>");
+
+                        document.write("<b style='font-size:30px; font-family:Verdana; margin-left:-8px; margin-top:-500px;'>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b><br>");
+                        break;
+                }
+            }
+        }
+        function Payment() {
+            console.log("Payment function called");
+
+            // Create a new button element
+            var button = document.createElement("button");
+
+            // Set attributes for the button
+            button.setAttribute("type", "button");
+            button.setAttribute("id", "paymentButton");
+            button.textContent = "Pay Now";
+            button.style.backgroundColor = "#6ee4ec";
+            button.style.fontSize = "45px";
+            button.style.borderRadius = "10px";
+            button.style.height = "80px";
+            button.style.fontFamily = "century";
+            button.style.fontWeight = "bolder";
+            button.style.border = "3px solid black";
+            button.style.float = "right";
+            button.style.marginTop = "-26px";
+            button.addEventListener("mouseover",function(){
+                this.style.backgroundColor = "#55fee5";
+                this.style.fontSize = "47px";
+            });
+            button.addEventListener("mouseout",function(){
+                this.style.backgroundColor = "#6ee4ec";
+                this.style.fontSize = "45px";
+            });
+            document.body.appendChild(button);
+            button.addEventListener("click", function () {
+                window.location.assign("Payment.html");
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
